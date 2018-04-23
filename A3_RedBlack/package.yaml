@@ -21,14 +21,12 @@ description:         Please see the README on Github at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
-- random
-- containers
 
 library:
   source-dirs: src
 
 executables:
-  A2-exe:
+  A3-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:

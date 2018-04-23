@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/brian/workspace/410_AdvFunctional/A3_RedBlack/.stack-work/install/x86_64-linux/lts-11.4/8.2.2/bin"
-libdir     = "/home/brian/workspace/410_AdvFunctional/A3_RedBlack/.stack-work/install/x86_64-linux/lts-11.4/8.2.2/lib/x86_64-linux-ghc-8.2.2/A2-0.1.0.0-AR2U2L2vJyu6ScDncXoMy8"
+libdir     = "/home/brian/workspace/410_AdvFunctional/A3_RedBlack/.stack-work/install/x86_64-linux/lts-11.4/8.2.2/lib/x86_64-linux-ghc-8.2.2/A2-0.1.0.0-FaJbcG9nrTmFxosCzIxEXq"
 dynlibdir  = "/home/brian/workspace/410_AdvFunctional/A3_RedBlack/.stack-work/install/x86_64-linux/lts-11.4/8.2.2/lib/x86_64-linux-ghc-8.2.2"
 datadir    = "/home/brian/workspace/410_AdvFunctional/A3_RedBlack/.stack-work/install/x86_64-linux/lts-11.4/8.2.2/share/x86_64-linux-ghc-8.2.2/A2-0.1.0.0"
 libexecdir = "/home/brian/workspace/410_AdvFunctional/A3_RedBlack/.stack-work/install/x86_64-linux/lts-11.4/8.2.2/libexec/x86_64-linux-ghc-8.2.2/A2-0.1.0.0"

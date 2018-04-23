@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2bb7905cc3976cfecdedfa53076a678c7aaec826aea7973119aa788326520cbe
+-- hash: d48a6f65d1d3d9d247074f63bd1ed2d32a3ea45caf945d4fe337db846f4aa680
 
 name:           A2
 version:        0.1.0.0
@@ -30,16 +30,13 @@ library
       src
   build-depends:
       base >=4.7 && <5
-    , containers
-    , random
   exposed-modules:
-      A1
       Lib
   other-modules:
       Paths_A2
   default-language: Haskell2010
 
-executable A2-exe
+executable A3-exe
   main-is: Main.hs
   hs-source-dirs:
       app
@@ -47,8 +44,6 @@ executable A2-exe
   build-depends:
       A2
     , base >=4.7 && <5
-    , containers
-    , random
   other-modules:
       Paths_A2
   default-language: Haskell2010
@@ -62,8 +57,6 @@ test-suite A2-test
   build-depends:
       A2
     , base >=4.7 && <5
-    , containers
-    , random
   other-modules:
       Paths_A2
   default-language: Haskell2010
