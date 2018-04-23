@@ -1,0 +1,28 @@
+Author: Brian Leeson
+
+1.
+My previous experience in function programing has only been with CIS 425 Programming 
+Languages. We discussed programming cocepts in the context of languages that used 
+those concepts and come of those langauges were functional. We did you Haskell for 
+a few weeks. One of the largest projects that we did was writing a simple interpterter 
+after getting the skeleton code. I wouldn't say that I have written a sizeable 
+complete program in a functional langauge.
+
+I am confortable with the very basics of functional programming. I think I just need 
+to see a LOT more of it to get what it is about. I understand recursion, higher order
+functions, generics and immutibility from object oriented languages, but less so in 
+Haskell.
+
+At the end of the term I hope to GET what function langauges are about. Like why use 
+them, what are they practically good at, what does practically Haskell look like? I
+very much like project oriented courses and want to know about functional programming.
+If I get to write code and learn about Haskell, that would meet my goals.
+
+2.
+When the command is entered a loop happens and "Vroom!" is repeatedly 
+displayed. I don't 100% know how this happens. This is what I assume is happening:
+We define motor to be a function that takes one argument 'sounds'.
+sounds pattern matches to anything so calling motor with any argument will do what is on
+the right hand side of the =. It looks like sounds 'vroom!' is a funcion call to sounds 
+with 'vroom!' as the argument. then motor is called with the argument cycle. I have not
+seen cyce before but assume it is what is print/showing 'vroom!' over and over.
