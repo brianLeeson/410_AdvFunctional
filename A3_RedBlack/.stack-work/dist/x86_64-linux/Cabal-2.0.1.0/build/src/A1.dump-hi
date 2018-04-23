@@ -1,0 +1,1911 @@
+
+==================== FINAL INTERFACE ====================
+2018-04-23 19:16:56.853999 UTC
+
+interface A2-0.1.0.0-AR2U2L2vJyu6ScDncXoMy8:A1 8022
+  interface hash: 10ad9b339af3cc3d52f598bc67ab3b08
+  ABI hash: d67181fea39a2f54d6978e4e2bd127a8
+  export-list hash: 3f033a3d5129164c1cab63f6acf1b11d
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: d3f9096bac2e1e79f6ff76d0840aa157
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  A1.cardValue
+  A1.combineFaces
+  A1.combineNumbers
+  A1.createDeck
+  A1.createIndexList
+  A1.faces
+  A1.fullDeck
+  A1.handValue
+  A1.numbers
+  A1.shuffle
+  A1.stripIndexList
+  A1.suits
+  A1.Ace{A1.A}
+  A1.Card{A1.Face A1.High A1.Number}
+  A1.Deck
+  A1.Hand
+  A1.Indexed{A1.Indx}
+  A1.Rank{A1.Ace A1.Int A1.Royalty}
+  A1.Royalty{A1.Jack A1.King A1.Queen}
+  A1.Suit{A1.Clubs A1.Diamonds A1.Hearts A1.Spades}
+module dependencies:
+package dependencies: base-4.10.1.0* ghc-prim-0.5.1.1
+                      integer-gmp-1.0.1.0
+orphans: base-4.10.1.0:GHC.Float base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Either base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Type.Equality base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats
+import  -/  base-4.10.1.0:Data.List 4ab7fa2a1b87502b23af891a384f0506
+import  -/  base-4.10.1.0:Data.OldList 555420b092ca8cf0a8f9666bc0e07dcf
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
+import  -/  base-4.10.1.0:GHC.Enum 5a1ba50c23f92f669e01f8955f202337
+import  -/  base-4.10.1.0:GHC.Err 514b3a24b22e9d7d731c2d0d02d10842
+import  -/  base-4.10.1.0:GHC.Num 6e1dc5d36d99a802edb39b92bb1923b8
+import  -/  base-4.10.1.0:GHC.Show 0a8ce2b5e533d1c2cfb7954e6736be45
+import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
+import  -/  ghc-prim-0.5.1.1:GHC.Types b1fd0716441595db508c1a74387bf394
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty :: GHC.Enum.Enum A1.Royalty
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Royalty
+                  A1.$fEnumRoyalty_$csucc
+                  A1.$fEnumRoyalty_$cpred
+                  A1.$fEnumRoyalty_$ctoEnum
+                  A1.$fEnumRoyalty_$cfromEnum
+                  A1.$fEnumRoyalty_$cenumFrom
+                  A1.$fEnumRoyalty_$cenumFromThen
+                  A1.$fEnumRoyalty_$cenumFromTo
+                  A1.$fEnumRoyalty_$cenumFromThenTo -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty1 :: [A1.Royalty]
+  {- Unfolding: (A1.$fEnumRoyalty_go3 2#) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty2 :: [A1.Royalty]
+  {- Unfolding: (A1.$fEnumRoyalty_go3 1#) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty3 :: [A1.Royalty]
+  {- Unfolding: (A1.$fEnumRoyalty_go3 0#) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty4 :: A1.Royalty
+  {- Strictness: x -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty5 :: A1.Royalty
+  {- Strictness: x -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_$cenumFrom :: A1.Royalty -> [A1.Royalty]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (a :: A1.Royalty) ->
+                 case a of wild {
+                   A1.Jack -> A1.$fEnumRoyalty3
+                   A1.Queen -> A1.$fEnumRoyalty2
+                   A1.King -> A1.$fEnumRoyalty1 }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_$cenumFromThen ::
+    A1.Royalty -> A1.Royalty -> [A1.Royalty]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_$cenumFromThenTo ::
+    A1.Royalty -> A1.Royalty -> A1.Royalty -> [A1.Royalty]
+  {- Arity: 3, Strictness: <S,1*U><S,1*U><S,1*U> -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_$cenumFromTo ::
+    A1.Royalty -> A1.Royalty -> [A1.Royalty]
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (x :: A1.Royalty) (y :: A1.Royalty) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> [A1.Royalty]
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case y of wild {
+                       A1.Jack
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.># a# 0#) of wild1 {
+                            GHC.Types.False -> A1.$fEnumRoyalty_go2 a#
+                            GHC.Types.True -> GHC.Types.[] @ A1.Royalty }
+                       A1.Queen
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.># a# 1#) of wild1 {
+                            GHC.Types.False -> A1.$fEnumRoyalty_go1 a#
+                            GHC.Types.True -> GHC.Types.[] @ A1.Royalty }
+                       A1.King
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.># a# 2#) of wild1 {
+                            GHC.Types.False -> A1.$fEnumRoyalty_go a#
+                            GHC.Types.True -> GHC.Types.[] @ A1.Royalty } }
+                 } in
+                 case x of wild {
+                   A1.Jack -> $j 0# A1.Queen -> $j 1# A1.King -> $j 2# }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_$cfromEnum :: A1.Royalty -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (a :: A1.Royalty) ->
+                 case a of wild {
+                   A1.Jack -> GHC.Types.I# 0#
+                   A1.Queen -> GHC.Types.I# 1#
+                   A1.King -> GHC.Types.I# 2# }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_$cpred :: A1.Royalty -> A1.Royalty
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (a :: A1.Royalty) ->
+                 case a of wild {
+                   A1.Jack -> A1.$fEnumRoyalty4
+                   A1.Queen -> A1.Jack
+                   A1.King -> A1.Queen }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_$csucc :: A1.Royalty -> A1.Royalty
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (a :: A1.Royalty) ->
+                 case a of wild {
+                   A1.Jack -> A1.Queen
+                   A1.Queen -> A1.King
+                   A1.King -> A1.$fEnumRoyalty5 }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_$ctoEnum :: GHC.Types.Int -> A1.Royalty
+  {- Arity: 1, Strictness: <S(S),1*U(U)>, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Int) ->
+                 case w of ww { GHC.Types.I# ww1 -> A1.$w$ctoEnum ww1 }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_go :: GHC.Prim.Int# -> [A1.Royalty]
+  {- Arity: 1, Strictness: <L,U>m2 -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_go1 :: GHC.Prim.Int# -> [A1.Royalty]
+  {- Arity: 1, Strictness: <L,U>m2 -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_go2 :: GHC.Prim.Int# -> [A1.Royalty]
+  {- Arity: 1, Strictness: <L,U>m2 -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEnumRoyalty_go3 :: GHC.Prim.Int# -> [A1.Royalty]
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2 -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit :: GHC.Enum.Enum A1.Suit
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Suit
+                  A1.$fEnumSuit_$csucc
+                  A1.$fEnumSuit_$cpred
+                  A1.$fEnumSuit_$ctoEnum
+                  A1.$fEnumSuit_$cfromEnum
+                  A1.$fEnumSuit_$cenumFrom
+                  A1.$fEnumSuit_$cenumFromThen
+                  A1.$fEnumSuit_$cenumFromTo
+                  A1.$fEnumSuit_$cenumFromThenTo -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit1 :: [A1.Suit]
+  {- Unfolding: (A1.$fEnumSuit_go4 3#) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit2 :: [A1.Suit]
+  {- Unfolding: (A1.$fEnumSuit_go4 2#) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit3 :: [A1.Suit]
+  {- Unfolding: (A1.$fEnumSuit_go4 1#) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit4 :: [A1.Suit]
+  {- Unfolding: (A1.$fEnumSuit_go4 0#) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit5 :: A1.Suit
+  {- Strictness: x -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit6 :: A1.Suit
+  {- Strictness: x -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_$cenumFrom :: A1.Suit -> [A1.Suit]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (a :: A1.Suit) ->
+                 case a of wild {
+                   A1.Hearts -> A1.$fEnumSuit4
+                   A1.Diamonds -> A1.$fEnumSuit3
+                   A1.Clubs -> A1.$fEnumSuit2
+                   A1.Spades -> A1.$fEnumSuit1 }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_$cenumFromThen :: A1.Suit -> A1.Suit -> [A1.Suit]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_$cenumFromThenTo ::
+    A1.Suit -> A1.Suit -> A1.Suit -> [A1.Suit]
+  {- Arity: 3, Strictness: <S,1*U><S,1*U><S,1*U> -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_$cenumFromTo :: A1.Suit -> A1.Suit -> [A1.Suit]
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (x :: A1.Suit) (y :: A1.Suit) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> [A1.Suit]
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case y of wild {
+                       A1.Hearts
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.># a# 0#) of wild1 {
+                            GHC.Types.False -> A1.$fEnumSuit_go3 a#
+                            GHC.Types.True -> GHC.Types.[] @ A1.Suit }
+                       A1.Diamonds
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.># a# 1#) of wild1 {
+                            GHC.Types.False -> A1.$fEnumSuit_go2 a#
+                            GHC.Types.True -> GHC.Types.[] @ A1.Suit }
+                       A1.Clubs
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.># a# 2#) of wild1 {
+                            GHC.Types.False -> A1.$fEnumSuit_go1 a#
+                            GHC.Types.True -> GHC.Types.[] @ A1.Suit }
+                       A1.Spades
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.># a# 3#) of wild1 {
+                            GHC.Types.False -> A1.$fEnumSuit_go a#
+                            GHC.Types.True -> GHC.Types.[] @ A1.Suit } }
+                 } in
+                 case x of wild {
+                   A1.Hearts -> $j 0#
+                   A1.Diamonds -> $j 1#
+                   A1.Clubs -> $j 2#
+                   A1.Spades -> $j 3# }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_$cfromEnum :: A1.Suit -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (a :: A1.Suit) ->
+                 case a of wild {
+                   A1.Hearts -> GHC.Types.I# 0#
+                   A1.Diamonds -> GHC.Types.I# 1#
+                   A1.Clubs -> GHC.Types.I# 2#
+                   A1.Spades -> GHC.Types.I# 3# }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_$cpred :: A1.Suit -> A1.Suit
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (a :: A1.Suit) ->
+                 case a of wild {
+                   A1.Hearts -> A1.$fEnumSuit5
+                   A1.Diamonds -> A1.Hearts
+                   A1.Clubs -> A1.Diamonds
+                   A1.Spades -> A1.Clubs }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_$csucc :: A1.Suit -> A1.Suit
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (a :: A1.Suit) ->
+                 case a of wild {
+                   A1.Hearts -> A1.Diamonds
+                   A1.Diamonds -> A1.Clubs
+                   A1.Clubs -> A1.Spades
+                   A1.Spades -> A1.$fEnumSuit6 }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_$ctoEnum :: GHC.Types.Int -> A1.Suit
+  {- Arity: 1, Strictness: <S(S),1*U(U)>, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: GHC.Types.Int) ->
+                 case w of ww { GHC.Types.I# ww1 -> A1.$w$ctoEnum1 ww1 }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_go :: GHC.Prim.Int# -> [A1.Suit]
+  {- Arity: 1, Strictness: <L,U>m2 -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_go1 :: GHC.Prim.Int# -> [A1.Suit]
+  {- Arity: 1, Strictness: <L,U>m2 -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_go2 :: GHC.Prim.Int# -> [A1.Suit]
+  {- Arity: 1, Strictness: <L,U>m2 -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_go3 :: GHC.Prim.Int# -> [A1.Suit]
+  {- Arity: 1, Strictness: <L,U>m2 -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEnumSuit_go4 :: GHC.Prim.Int# -> [A1.Suit]
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2 -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  $fEqAce :: GHC.Classes.Eq A1.Ace
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:. @ A1.Ace A1.$fEqAce_$c== A1.$fEqAce_$c/= -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  $fEqAce_$c/= :: A1.Ace -> A1.Ace -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*H><S,1*H>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: A1.Ace) (b :: A1.Ace) ->
+                 case a of wild { A1.A ->
+                 case b of wild1 { A1.A -> GHC.Types.False } }) -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  $fEqAce_$c== :: A1.Ace -> A1.Ace -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*H><S,1*H>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: A1.Ace) (ds1 :: A1.Ace) ->
+                 case ds of wild { A1.A ->
+                 case ds1 of wild1 { A1.A -> GHC.Types.True } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fEqIndexed :: GHC.Classes.Eq i => GHC.Classes.Eq (A1.Indexed i a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(C(C1(U)),A)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ i @ a (v :: GHC.Classes.Eq i).
+                  @ (A1.Indexed i a)
+                  (A1.$fEqIndexed_$c== @ i @ a v)
+                  (A1.$fEqIndexed_$c/= @ i @ a v) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fEqIndexed_$c/= ::
+    GHC.Classes.Eq i =>
+    A1.Indexed i a -> A1.Indexed i a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><S,1*U(U,A)><S,1*U(U,A)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ i
+                   @ a
+                   ($dEq :: GHC.Classes.Eq i)
+                   (x :: A1.Indexed i a)
+                   (y :: A1.Indexed i a) ->
+                 case x of wild { A1.Indx i1 a1 ->
+                 case y of wild1 { A1.Indx i' a' ->
+                 case GHC.Classes.== @ i $dEq i1 i' of wild2 {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False } } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fEqIndexed_$c== ::
+    GHC.Classes.Eq i =>
+    A1.Indexed i a -> A1.Indexed i a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><S,1*U(U,A)><S,1*U(U,A)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dEq :: GHC.Classes.Eq i)
+                   (ds :: A1.Indexed i a)
+                   (ds1 :: A1.Indexed i a) ->
+                 case ds of wild { A1.Indx i1 a1 ->
+                 case ds1 of wild1 { A1.Indx i' a' ->
+                 GHC.Classes.== @ i $dEq i1 i' } }) -}
+d5232254204c619656784497c867c37a
+  $fEqRank :: GHC.Classes.Eq A1.Rank
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:. @ A1.Rank A1.$fEqRank_$c== A1.$fEqRank_$c/= -}
+d5232254204c619656784497c867c37a
+  $fEqRank_$c/= :: A1.Rank -> A1.Rank -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: A1.Rank) (b :: A1.Rank) ->
+                 case a of wild {
+                   A1.Ace
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Ace -> GHC.Types.False }
+                   A1.Royalty
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Royalty -> GHC.Types.False }
+                   A1.Int
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Int -> GHC.Types.False } }) -}
+d5232254204c619656784497c867c37a
+  $fEqRank_$c== :: A1.Rank -> A1.Rank -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: A1.Rank) (ds1 :: A1.Rank) ->
+                 case ds of wild {
+                   A1.Ace
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Ace -> GHC.Types.True }
+                   A1.Royalty
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Royalty -> GHC.Types.True }
+                   A1.Int
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Int -> GHC.Types.True } }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEqRoyalty :: GHC.Classes.Eq A1.Royalty
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Royalty A1.$fEqRoyalty_$c== A1.$fEqRoyalty_$c/= -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEqRoyalty_$c/= :: A1.Royalty -> A1.Royalty -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: A1.Royalty) (b :: A1.Royalty) ->
+                 case a of wild {
+                   A1.Jack
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Jack -> GHC.Types.False }
+                   A1.Queen
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Queen -> GHC.Types.False }
+                   A1.King
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.King -> GHC.Types.False } }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fEqRoyalty_$c== :: A1.Royalty -> A1.Royalty -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: A1.Royalty) (ds1 :: A1.Royalty) ->
+                 case ds of wild {
+                   A1.Jack
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Jack -> GHC.Types.True }
+                   A1.Queen
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Queen -> GHC.Types.True }
+                   A1.King
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.King -> GHC.Types.True } }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEqSuit :: GHC.Classes.Eq A1.Suit
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:. @ A1.Suit A1.$fEqSuit_$c== A1.$fEqSuit_$c/= -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEqSuit_$c/= :: A1.Suit -> A1.Suit -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: A1.Suit) (b :: A1.Suit) ->
+                 case a of wild {
+                   A1.Hearts
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Hearts -> GHC.Types.False }
+                   A1.Diamonds
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Diamonds -> GHC.Types.False }
+                   A1.Clubs
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Clubs -> GHC.Types.False }
+                   A1.Spades
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True A1.Spades -> GHC.Types.False } }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fEqSuit_$c== :: A1.Suit -> A1.Suit -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: A1.Suit) (ds1 :: A1.Suit) ->
+                 case ds of wild {
+                   A1.Hearts
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Hearts -> GHC.Types.True }
+                   A1.Diamonds
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Diamonds -> GHC.Types.True }
+                   A1.Clubs
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Clubs -> GHC.Types.True }
+                   A1.Spades
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False A1.Spades -> GHC.Types.True } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed ::
+    GHC.Classes.Ord i => GHC.Classes.Ord (A1.Indexed i a)
+  DFunId
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(1*U(C(C1(U)),A),C(C1(U)),A,A,A,A,A,A)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ i @ a (v :: GHC.Classes.Ord i).
+                  @ (A1.Indexed i a)
+                  (A1.$fOrdIndexed_$cp1Ord @ i @ a v)
+                  (A1.$fOrdIndexed_$ccompare @ i @ a v)
+                  (A1.$fOrdIndexed_$c< @ i @ a v)
+                  (A1.$fOrdIndexed_$c<= @ i @ a v)
+                  (A1.$fOrdIndexed_$c> @ i @ a v)
+                  (A1.$fOrdIndexed_$c>= @ i @ a v)
+                  (A1.$fOrdIndexed_$cmax @ i @ a v)
+                  (A1.$fOrdIndexed_$cmin @ i @ a v) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed_$c< ::
+    GHC.Classes.Ord i =>
+    A1.Indexed i a -> A1.Indexed i a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLLLLL),1*U(A,1*C1(C1(U)),A,A,A,A,A,A)><S,1*U(U,A)><S,1*U(U,A)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dOrd :: GHC.Classes.Ord i)
+                   (x :: A1.Indexed i a)
+                   (y :: A1.Indexed i a) ->
+                 case x of wild { A1.Indx x1 ds ->
+                 case y of wild1 { A1.Indx y1 ds1 ->
+                 case GHC.Classes.compare @ i $dOrd x1 y1 of wild2 {
+                   DEFAULT -> GHC.Types.False GHC.Types.LT -> GHC.Types.True } } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed_$c<= ::
+    GHC.Classes.Ord i =>
+    A1.Indexed i a -> A1.Indexed i a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLLLLL),1*U(A,1*C1(C1(U)),A,A,A,A,A,A)><S,1*U(U,A)><S,1*U(U,A)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dOrd :: GHC.Classes.Ord i)
+                   (x :: A1.Indexed i a)
+                   (y :: A1.Indexed i a) ->
+                 case x of wild { A1.Indx x1 ds ->
+                 case y of wild1 { A1.Indx y1 ds1 ->
+                 case GHC.Classes.compare @ i $dOrd x1 y1 of wild2 {
+                   DEFAULT -> GHC.Types.True GHC.Types.GT -> GHC.Types.False } } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed_$c> ::
+    GHC.Classes.Ord i =>
+    A1.Indexed i a -> A1.Indexed i a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLLLLL),1*U(A,1*C1(C1(U)),A,A,A,A,A,A)><S,1*U(U,A)><S,1*U(U,A)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dOrd :: GHC.Classes.Ord i)
+                   (x :: A1.Indexed i a)
+                   (y :: A1.Indexed i a) ->
+                 case x of wild { A1.Indx x1 ds ->
+                 case y of wild1 { A1.Indx y1 ds1 ->
+                 case GHC.Classes.compare @ i $dOrd x1 y1 of wild2 {
+                   DEFAULT -> GHC.Types.False GHC.Types.GT -> GHC.Types.True } } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed_$c>= ::
+    GHC.Classes.Ord i =>
+    A1.Indexed i a -> A1.Indexed i a -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLLLLL),1*U(A,1*C1(C1(U)),A,A,A,A,A,A)><S,1*U(U,A)><S,1*U(U,A)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dOrd :: GHC.Classes.Ord i)
+                   (x :: A1.Indexed i a)
+                   (y :: A1.Indexed i a) ->
+                 case x of wild { A1.Indx x1 ds ->
+                 case y of wild1 { A1.Indx y1 ds1 ->
+                 case GHC.Classes.compare @ i $dOrd x1 y1 of wild2 {
+                   DEFAULT -> GHC.Types.True GHC.Types.LT -> GHC.Types.False } } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed_$ccompare ::
+    GHC.Classes.Ord i =>
+    A1.Indexed i a -> A1.Indexed i a -> GHC.Types.Ordering
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLLLLL),1*U(A,1*C1(C1(U)),A,A,A,A,A,A)><S,1*U(U,A)><S,1*U(U,A)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dOrd :: GHC.Classes.Ord i)
+                   (ds :: A1.Indexed i a)
+                   (ds1 :: A1.Indexed i a) ->
+                 case ds of wild { A1.Indx x ds2 ->
+                 case ds1 of wild1 { A1.Indx y ds3 ->
+                 GHC.Classes.compare @ i $dOrd x y } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed_$cmax ::
+    GHC.Classes.Ord i =>
+    A1.Indexed i a -> A1.Indexed i a -> A1.Indexed i a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLLLLL),1*U(A,1*C1(C1(U)),A,A,A,A,A,A)><S,1*U(U,U)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dOrd :: GHC.Classes.Ord i)
+                   (x :: A1.Indexed i a)
+                   (y :: A1.Indexed i a) ->
+                 case x of wild { A1.Indx x1 ds ->
+                 case y of wild1 { A1.Indx y1 ds1 ->
+                 case GHC.Classes.compare @ i $dOrd x1 y1 of wild2 {
+                   DEFAULT -> wild1 GHC.Types.GT -> wild } } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed_$cmin ::
+    GHC.Classes.Ord i =>
+    A1.Indexed i a -> A1.Indexed i a -> A1.Indexed i a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LC(C(S))LLLLLL),1*U(A,1*C1(C1(U)),A,A,A,A,A,A)><S,1*U(U,U)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dOrd :: GHC.Classes.Ord i)
+                   (x :: A1.Indexed i a)
+                   (y :: A1.Indexed i a) ->
+                 case x of wild { A1.Indx x1 ds ->
+                 case y of wild1 { A1.Indx y1 ds1 ->
+                 case GHC.Classes.compare @ i $dOrd x1 y1 of wild2 {
+                   DEFAULT -> wild GHC.Types.GT -> wild1 } } }) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fOrdIndexed_$cp1Ord ::
+    GHC.Classes.Ord i => GHC.Classes.Eq (A1.Indexed i a)
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,1*U(1*U(C(C1(U)),A),A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ i @ a ($dOrd :: GHC.Classes.Ord i) ->
+                 A1.$fEqIndexed @ i @ a (GHC.Classes.$p1Ord @ i $dOrd)) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fOrdRoyalty :: GHC.Classes.Ord A1.Royalty
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Royalty
+                  A1.$fEqRoyalty
+                  A1.$fOrdRoyalty_$ccompare
+                  A1.$fOrdRoyalty_$c<
+                  A1.$fOrdRoyalty_$c<=
+                  A1.$fOrdRoyalty_$c>
+                  A1.$fOrdRoyalty_$c>=
+                  A1.$fOrdRoyalty_$cmax
+                  A1.$fOrdRoyalty_$cmin -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fOrdRoyalty_$c< :: A1.Royalty -> A1.Royalty -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: A1.Royalty) (b :: A1.Royalty) ->
+                 case a of wild {
+                   A1.Jack
+                   -> case b of wild1 {
+                        A1.Jack -> GHC.Types.False
+                        A1.Queen -> GHC.Types.True
+                        A1.King -> GHC.Types.True }
+                   A1.Queen
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.False A1.King -> GHC.Types.True }
+                   A1.King -> case b of wild1 { DEFAULT -> GHC.Types.False } }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fOrdRoyalty_$c<= :: A1.Royalty -> A1.Royalty -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: A1.Royalty) (b :: A1.Royalty) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> GHC.Types.Bool
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case a of wild {
+                       A1.Jack
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 0#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False }
+                       A1.Queen
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 1#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False }
+                       A1.King
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 2#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False } }
+                 } in
+                 case b of wild {
+                   A1.Jack -> $j 0# A1.Queen -> $j 1# A1.King -> $j 2# }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fOrdRoyalty_$c> :: A1.Royalty -> A1.Royalty -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, True)
+                (\ (a :: A1.Royalty) (b :: A1.Royalty) ->
+                 A1.$fOrdRoyalty_$c< b a) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fOrdRoyalty_$c>= :: A1.Royalty -> A1.Royalty -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: A1.Royalty) (b :: A1.Royalty) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> GHC.Types.Bool
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case b of wild {
+                       A1.Jack
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 0#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False }
+                       A1.Queen
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 1#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False }
+                       A1.King
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 2#) of wild1 {
+                            GHC.Types.False -> GHC.Types.True
+                            GHC.Types.True -> GHC.Types.False } }
+                 } in
+                 case a of wild {
+                   A1.Jack -> $j 0# A1.Queen -> $j 1# A1.King -> $j 2# }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fOrdRoyalty_$ccompare ::
+    A1.Royalty -> A1.Royalty -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: A1.Royalty) (b :: A1.Royalty) ->
+                 case a of wild {
+                   A1.Jack
+                   -> case b of wild1 {
+                        A1.Jack -> GHC.Types.EQ
+                        A1.Queen -> GHC.Types.LT
+                        A1.King -> GHC.Types.LT }
+                   A1.Queen
+                   -> case b of wild1 {
+                        A1.Jack -> GHC.Types.GT
+                        A1.Queen -> GHC.Types.EQ
+                        A1.King -> GHC.Types.LT }
+                   A1.King
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.GT A1.King -> GHC.Types.EQ } }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fOrdRoyalty_$cmax :: A1.Royalty -> A1.Royalty -> A1.Royalty
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U>,
+     Unfolding: (\ (x :: A1.Royalty) (y :: A1.Royalty) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> A1.Royalty
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case x of wild {
+                       A1.Jack
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 0#) of wild1 {
+                            GHC.Types.False -> y GHC.Types.True -> A1.Jack }
+                       A1.Queen
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 1#) of wild1 {
+                            GHC.Types.False -> y GHC.Types.True -> A1.Queen }
+                       A1.King
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 2#) of wild1 {
+                            GHC.Types.False -> y GHC.Types.True -> A1.King } }
+                 } in
+                 case y of wild {
+                   A1.Jack -> $j 0# A1.Queen -> $j 1# A1.King -> $j 2# }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fOrdRoyalty_$cmin :: A1.Royalty -> A1.Royalty -> A1.Royalty
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U>,
+     Unfolding: (\ (x :: A1.Royalty) (y :: A1.Royalty) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> A1.Royalty
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (a# :: GHC.Prim.Int#)[OneShot] ->
+                     case x of wild {
+                       A1.Jack
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 0#) of wild1 {
+                            GHC.Types.False -> A1.Jack GHC.Types.True -> y }
+                       A1.Queen
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 1#) of wild1 {
+                            GHC.Types.False -> A1.Queen GHC.Types.True -> y }
+                       A1.King
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.<# a# 2#) of wild1 {
+                            GHC.Types.False -> A1.King GHC.Types.True -> y } }
+                 } in
+                 case y of wild {
+                   A1.Jack -> $j 0# A1.Queen -> $j 1# A1.King -> $j 2# }) -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  $fShowAce :: GHC.Show.Show A1.Ace
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Ace
+                  A1.$fShowAce_$cshowsPrec
+                  A1.$fShowAce_$cshow
+                  A1.$fShowAce_$cshowList -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  $fShowAce1 :: A1.Ace -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*H><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: A1.Ace) (eta :: GHC.Base.String) ->
+                 case ds of wild { A1.A ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b
+                      (c :: GHC.Types.Char -> b -> b)[OneShot]
+                      (n :: b)[OneShot] ->
+                    GHC.Base.foldr @ GHC.Types.Char @ b c n A1.$fShowAce2)
+                   eta }) -}
+e255e1f8e168ecf9f30052c5f515948f
+  $fShowAce2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# A1.$fShowAce3) -}
+dfdf08fe2f3c30b6759ed50bac213ef3
+  $fShowAce3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("A"#) -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  $fShowAce_$cshow :: A1.Ace -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*H>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: A1.Ace) -> case x of wild { A1.A -> A1.$fShowAce2 }) -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  $fShowAce_$cshowList :: [A1.Ace] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ A1.Ace A1.$fShowAce1) -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  $fShowAce_$cshowsPrec :: GHC.Types.Int -> A1.Ace -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*H><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (ds :: GHC.Types.Int)
+                   (ds1 :: A1.Ace)
+                   (eta :: GHC.Base.String) ->
+                 case ds1 of wild { A1.A ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b
+                      (c :: GHC.Types.Char -> b -> b)[OneShot]
+                      (n :: b)[OneShot] ->
+                    GHC.Base.foldr @ GHC.Types.Char @ b c n A1.$fShowAce2)
+                   eta }) -}
+0a0227d1a83b7d4061153473c3094502
+  $fShowCard :: GHC.Show.Show A1.Card
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Card
+                  A1.$fShowCard_$cshowsPrec
+                  A1.$fShowCard_$cshow
+                  A1.$fShowCard_$cshowList -}
+0a0227d1a83b7d4061153473c3094502
+  $fShowCard1 :: A1.Card -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: A1.Card) (s :: GHC.Base.String)[OneShot] ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b
+                      (c :: GHC.Types.Char -> b -> b)[OneShot]
+                      (n :: b)[OneShot] ->
+                    GHC.Base.foldr @ GHC.Types.Char @ b c n (A1.$fShowCard_$cshow x))
+                   s) -}
+22214a7bbcdbfe220520505432c3ea80
+  $fShowCard10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# A1.$fShowCard11) -}
+ff9ef9d7dbe9fbf5fbd4e19ac5cf3d01
+  $fShowCard11 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("\\226\\153\\163"#) -}
+cfbbdcb5ef5dee4c151f46437e064f27
+  $fShowCard12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# A1.$fShowCard13) -}
+fd4dd71f57bb322c1a524c588300872e
+  $fShowCard13 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("\\226\\153\\162"#) -}
+614226f0926400e32e0d3059cb100c66
+  $fShowCard14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# A1.$fShowCard15) -}
+7927bd592bba6632fa4dab54cc160324
+  $fShowCard15 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("\\226\\153\\161"#) -}
+3211de4559179476fc39b56cfa760223
+  $fShowCard2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# A1.$fShowCard3) -}
+edca8afd404b11e2f2672c232b072eea
+  $fShowCard3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("K"#) -}
+210e4cf4306eccec15328386090f995e
+  $fShowCard4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# A1.$fShowCard5) -}
+aa3c628b74c866c62a3190c3a745757d
+  $fShowCard5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Q"#) -}
+04abb98a7b5fc7d31922b493079a463b
+  $fShowCard6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# A1.$fShowCard7) -}
+fca75638b11c35cefe85168664c8058f
+  $fShowCard7 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("J"#) -}
+4dc66c13bfd4e343b28d1062ae727dc0
+  $fShowCard8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCStringUtf8# A1.$fShowCard9) -}
+bd17e5b0c3641aff2cc300dfa9726625
+  $fShowCard9 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("\\226\\153\\160"#) -}
+0a0227d1a83b7d4061153473c3094502
+  $fShowCard_$cshow :: A1.Card -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: A1.Card) ->
+                 case ds of wild {
+                   A1.Number i s
+                   -> case i of ww2 { GHC.Types.I# ww3 ->
+                      case GHC.Show.$wshowSignedInt
+                             0#
+                             ww3
+                             (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                      GHC.Base.++
+                        @ GHC.Types.Char
+                        (GHC.Types.: @ GHC.Types.Char ww5 ww6)
+                        (case s of wild1 {
+                           A1.Hearts -> A1.$fShowCard14
+                           A1.Diamonds -> A1.$fShowCard12
+                           A1.Clubs -> A1.$fShowCard10
+                           A1.Spades -> A1.$fShowCard8 }) } }
+                   A1.Face r s
+                   -> case r of wild1 {
+                        A1.Jack
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             A1.$fShowCard6
+                             (case s of wild2 {
+                                A1.Hearts -> A1.$fShowCard14
+                                A1.Diamonds -> A1.$fShowCard12
+                                A1.Clubs -> A1.$fShowCard10
+                                A1.Spades -> A1.$fShowCard8 })
+                        A1.Queen
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             A1.$fShowCard4
+                             (case s of wild2 {
+                                A1.Hearts -> A1.$fShowCard14
+                                A1.Diamonds -> A1.$fShowCard12
+                                A1.Clubs -> A1.$fShowCard10
+                                A1.Spades -> A1.$fShowCard8 })
+                        A1.King
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             A1.$fShowCard2
+                             (case s of wild2 {
+                                A1.Hearts -> A1.$fShowCard14
+                                A1.Diamonds -> A1.$fShowCard12
+                                A1.Clubs -> A1.$fShowCard10
+                                A1.Spades -> A1.$fShowCard8 }) }
+                   A1.High s
+                   -> GHC.CString.unpackAppendCString#
+                        A1.$fShowAce3
+                        (case s of wild1 {
+                           A1.Hearts -> A1.$fShowCard14
+                           A1.Diamonds -> A1.$fShowCard12
+                           A1.Clubs -> A1.$fShowCard10
+                           A1.Spades -> A1.$fShowCard8 }) }) -}
+0a0227d1a83b7d4061153473c3094502
+  $fShowCard_$cshowList :: [A1.Card] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [A1.Card]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ A1.Card A1.$fShowCard1 ls s) -}
+0a0227d1a83b7d4061153473c3094502
+  $fShowCard_$cshowsPrec ::
+    GHC.Types.Int -> A1.Card -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (ds :: GHC.Types.Int) (x :: A1.Card) (s :: GHC.Base.String) ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b
+                      (c :: GHC.Types.Char -> b -> b)[OneShot]
+                      (n :: b)[OneShot] ->
+                    GHC.Base.foldr @ GHC.Types.Char @ b c n (A1.$fShowCard_$cshow x))
+                   s) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fShowIndexed ::
+    (GHC.Show.Show a, GHC.Show.Show i) =>
+    GHC.Show.Show (A1.Indexed i a)
+  DFunId
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(C(C1(C(U))),A,A)><L,U(C(C1(C(U))),A,A)>m,
+     Inline: CONLIKE,
+     Unfolding: DFun: @ i
+                      @ a
+                      (v :: GHC.Show.Show a)
+                      (v1 :: GHC.Show.Show i).
+                  @ (A1.Indexed i a)
+                  (A1.$fShowIndexed_$cshowsPrec @ i @ a v v1)
+                  (A1.$fShowIndexed_$cshow @ i @ a v v1)
+                  (A1.$fShowIndexed_$cshowList @ i @ a v v1) -}
+6953f683d593ae3819b033ef2acca978
+  $fShowIndexed1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+3a13fee3f75611b6029f538b1e64c1fd
+  $fShowIndexed2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Indx "#) -}
+e3ffe7ca5fe7952a598abf02f61becb0
+  $fShowIndexed3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fShowIndexed_$cshow ::
+    (GHC.Show.Show a, GHC.Show.Show i) =>
+    A1.Indexed i a -> GHC.Base.String
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(C1(C(U))),A,A)><L,1*U(1*C1(C1(C(U))),A,A)><S,1*U(U,U)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ i
+                   @ a
+                   ($dShow :: GHC.Show.Show a)
+                   ($dShow1 :: GHC.Show.Show i)
+                   (x :: A1.Indexed i a) ->
+                 A1.$fShowIndexed_$cshowsPrec
+                   @ i
+                   @ a
+                   $dShow
+                   $dShow1
+                   A1.$fShowIndexed1
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fShowIndexed_$cshowList ::
+    (GHC.Show.Show a, GHC.Show.Show i) =>
+    [A1.Indexed i a] -> GHC.Show.ShowS
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U(C(C1(C(U))),A,A)><L,U(C(C1(C(U))),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ i
+                   @ a
+                   ($dShow :: GHC.Show.Show a)
+                   ($dShow1 :: GHC.Show.Show i)
+                   (eta :: [A1.Indexed i a])
+                   (eta1 :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (A1.Indexed i a)
+                   (A1.$fShowIndexed_$cshowsPrec
+                      @ i
+                      @ a
+                      $dShow
+                      $dShow1
+                      A1.$fShowIndexed1)
+                   eta
+                   eta1) -}
+6efe3bdf52f56a7a54ecde6b995182f2
+  $fShowIndexed_$cshowsPrec ::
+    (GHC.Show.Show a, GHC.Show.Show i) =>
+    GHC.Types.Int -> A1.Indexed i a -> GHC.Show.ShowS
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(C1(C(U))),A,A)><L,1*U(1*C1(C1(C(U))),A,A)><S(S),1*U(U)><S,1*U(U,U)>,
+     Inline: [0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ i
+                   @ a
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Show.Show i)
+                   (w2 :: GHC.Types.Int)
+                   (w3 :: A1.Indexed i a) ->
+                 case w2 of ww { GHC.Types.I# ww1 ->
+                 case w3 of ww2 { A1.Indx ww3 ww4 ->
+                 A1.$w$cshowsPrec @ i @ a w w1 ww1 ww3 ww4 } }) -}
+d5232254204c619656784497c867c37a
+  $fShowRank :: GHC.Show.Show A1.Rank
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Rank
+                  A1.$fShowRank_$cshowsPrec
+                  A1.$fShowRank_$cshow
+                  A1.$fShowRank_$cshowList -}
+a24f8ef0aa3d855e250573fd84a54155
+  $fShowRank1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# A1.$fShowRank2) -}
+75587b0c014cdb81a44b7e1e3b6052fb
+  $fShowRank2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Int"#) -}
+dcd907d514d12a0969365313bfebd697
+  $fShowRank3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# A1.$fShowRank4) -}
+35e09f52e8c8e6bb649e25da245a60c0
+  $fShowRank4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Royalty"#) -}
+91b7692d86dddb7fe98a79410cec7e66
+  $fShowRank5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# A1.$fShowRank6) -}
+e115c4f16f2b7d24eb3c95353a4f8fcd
+  $fShowRank6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Ace"#) -}
+d5232254204c619656784497c867c37a
+  $fShowRank_$cshow :: A1.Rank -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: A1.Rank) ->
+                 case x of wild {
+                   A1.Ace -> A1.$fShowRank5
+                   A1.Royalty -> A1.$fShowRank3
+                   A1.Int -> A1.$fShowRank1 }) -}
+d5232254204c619656784497c867c37a
+  $fShowRank_$cshowList :: [A1.Rank] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ A1.Rank A1.$w$cshowsPrec1) -}
+d5232254204c619656784497c867c37a
+  $fShowRank_$cshowsPrec ::
+    GHC.Types.Int -> A1.Rank -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int) (w1 :: A1.Rank) (w2 :: GHC.Base.String) ->
+                 A1.$w$cshowsPrec1 w1 w2) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fShowRoyalty :: GHC.Show.Show A1.Royalty
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Royalty
+                  A1.$fShowRoyalty_$cshowsPrec
+                  A1.$fShowRoyalty_$cshow
+                  A1.$fShowRoyalty_$cshowList -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fShowRoyalty1 :: A1.Royalty -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ (x :: A1.Royalty) (s :: GHC.Base.String)[OneShot] ->
+                 case x of wild {
+                   A1.Jack -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard6 s
+                   A1.Queen -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard4 s
+                   A1.King -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard2 s }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fShowRoyalty_$cshow :: A1.Royalty -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: A1.Royalty) ->
+                 case ds of wild {
+                   A1.Jack -> A1.$fShowCard6
+                   A1.Queen -> A1.$fShowCard4
+                   A1.King -> A1.$fShowCard2 }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fShowRoyalty_$cshowList :: [A1.Royalty] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [A1.Royalty]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ A1.Royalty A1.$fShowRoyalty1 ls s) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $fShowRoyalty_$cshowsPrec ::
+    GHC.Types.Int -> A1.Royalty -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: A1.Royalty)
+                   (w2 :: GHC.Base.String) ->
+                 A1.$w$cshowsPrec2 w1 w2) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fShowSuit :: GHC.Show.Show A1.Suit
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ A1.Suit
+                  A1.$fShowSuit_$cshowsPrec
+                  A1.$fShowSuit_$cshow
+                  A1.$fShowSuit_$cshowList -}
+62a306ae1ad75573a9640c203b62bcec
+  $fShowSuit1 :: A1.Suit -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ (x :: A1.Suit) (s :: GHC.Base.String)[OneShot] ->
+                 case x of wild {
+                   A1.Hearts -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard14 s
+                   A1.Diamonds -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard12 s
+                   A1.Clubs -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard10 s
+                   A1.Spades -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard8 s }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fShowSuit_$cshow :: A1.Suit -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: A1.Suit) ->
+                 case ds of wild {
+                   A1.Hearts -> A1.$fShowCard14
+                   A1.Diamonds -> A1.$fShowCard12
+                   A1.Clubs -> A1.$fShowCard10
+                   A1.Spades -> A1.$fShowCard8 }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fShowSuit_$cshowList :: [A1.Suit] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [A1.Suit]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ A1.Suit A1.$fShowSuit1 ls s) -}
+62a306ae1ad75573a9640c203b62bcec
+  $fShowSuit_$cshowsPrec ::
+    GHC.Types.Int -> A1.Suit -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int) (w1 :: A1.Suit) (w2 :: GHC.Base.String) ->
+                 A1.$w$cshowsPrec3 w1 w2) -}
+2562ca877e1de1531afc7ab0edb8be66
+  $tc'A :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4713643043417240127##
+                   6655803698481021503##
+                   A1.$trModule
+                   A1.$tc'A2
+                   0#
+                   A1.$tc'A1) -}
+ffbd6cf048997e5234d0eb7a4511fdc8
+  $tc'A1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+54026a7dda41b44afdc9a228d2b310d6
+  $tc'A2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'A3) -}
+597d761c195dc85f868579c3e827267c
+  $tc'A3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'A"#) -}
+911b017f25aa9c5ff82d3c2f5284fa8a
+  $tc'Ace :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13850367015061673891##
+                   14540045789927314205##
+                   A1.$trModule
+                   A1.$tc'Ace2
+                   0#
+                   A1.$tc'Ace1) -}
+bc741d3205e6137edf87a11747b93659
+  $tc'Ace1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+af42042d9c981ef8d70dfe654896c7b2
+  $tc'Ace2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Ace3) -}
+a29358852e273430beac3415b3904f0b
+  $tc'Ace3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Ace"#) -}
+e18412aebca737006d70bc594d565c68
+  $tc'Clubs :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4747863924524478554##
+                   11822159176610060614##
+                   A1.$trModule
+                   A1.$tc'Clubs2
+                   0#
+                   A1.$tc'Clubs1) -}
+4818edf76034d3c6f40078c73094b097
+  $tc'Clubs1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+5029c3a5f9f64c31231c8cc5272e219a
+  $tc'Clubs2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Clubs3) -}
+b90e433e98e612b9c0f165cae11c040d
+  $tc'Clubs3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Clubs"#) -}
+2480b2382eac056fdec99e120743b625
+  $tc'Diamonds :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16720255996293459027##
+                   18125321459443949485##
+                   A1.$trModule
+                   A1.$tc'Diamonds1
+                   0#
+                   A1.$tc'Clubs1) -}
+f3b2dfe2973038a3d7648d39b88f7321
+  $tc'Diamonds1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Diamonds2) -}
+09acaa4afdab9ec5541871e4a1eeeee3
+  $tc'Diamonds2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Diamonds"#) -}
+b6bc9906eb554274888c1533dc2c5f69
+  $tc'Face :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   215749067731179489##
+                   13299142871748576024##
+                   A1.$trModule
+                   A1.$tc'Face2
+                   0#
+                   A1.$tc'Face1) -}
+810068e2d17a871ccb2150c4066a91a6
+  $tc'Face1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+15292bb67b72eb5dcc6172de49b1ebd3
+  $tc'Face2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Face3) -}
+67ddd793acf24f93b7a0c7c00c196744
+  $tc'Face3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Face"#) -}
+3e15b6ea965825f692d3bcbaf5d160d9
+  $tc'Hearts :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17352237460309281868##
+                   15508767909661169666##
+                   A1.$trModule
+                   A1.$tc'Hearts1
+                   0#
+                   A1.$tc'Clubs1) -}
+b0ac6d6da4f6e69109872bd8fde455d3
+  $tc'Hearts1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Hearts2) -}
+529712f54a60ff9f0f2f2ffd692daf80
+  $tc'Hearts2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Hearts"#) -}
+4fccb9cdb3f0deada09ce3f2ca25b3b7
+  $tc'High :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15036957880553564188##
+                   5426157951586257784##
+                   A1.$trModule
+                   A1.$tc'High2
+                   0#
+                   A1.$tc'High1) -}
+d2d2fecbfb4ce77530c745c3a56d14c5
+  $tc'High1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+afbedb954fc8e1489939109d2ed66713
+  $tc'High2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'High3) -}
+7cac6b116d2f69808823a97fd93d5cc7
+  $tc'High3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'High"#) -}
+89b62946dc1c99c4981a60350246e1d3
+  $tc'Indx :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6117711836755790494##
+                   16298983628516899668##
+                   A1.$trModule
+                   A1.$tc'Indx2
+                   2#
+                   A1.$tc'Indx1) -}
+fa780deebced7ece5752039004776cb8
+  $tc'Indx1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+70f098e3430ea874637446cd09b96e64
+  $tc'Indx2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Indx3) -}
+a77986ffb559baefe0766e26e12564cb
+  $tc'Indx3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Indx"#) -}
+80cb11c3f75108fb485d6370ff4b04ca
+  $tc'Int :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1866846294767620600##
+                   14727329566280401431##
+                   A1.$trModule
+                   A1.$tc'Int1
+                   0#
+                   A1.$tc'Ace1) -}
+d68797e5f45c49df3deba8145db955f7
+  $tc'Int1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Int2) -}
+76c8e7118f39ffd5854788f207fd8c9b
+  $tc'Int2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Int"#) -}
+90a28cc2693b9e1560c747852aaa126b
+  $tc'Jack :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3402112602967978710##
+                   5057806052919662048##
+                   A1.$trModule
+                   A1.$tc'Jack2
+                   0#
+                   A1.$tc'Jack1) -}
+53027ef50b97d2846d488ecab48f0443
+  $tc'Jack1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+86ffe58865437f12ed59c1e91aeb381e
+  $tc'Jack2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Jack3) -}
+074cdfd5c157f35b00c0c4d927076e18
+  $tc'Jack3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Jack"#) -}
+ef7f8950f729bc5e1b54944cae40ee3b
+  $tc'King :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8961220628915832619##
+                   9462123221475271417##
+                   A1.$trModule
+                   A1.$tc'King1
+                   0#
+                   A1.$tc'Jack1) -}
+0ecfd43e02cb3badb2002359a0b8e55a
+  $tc'King1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'King2) -}
+fa5aa20629761c298588b063c66ee63a
+  $tc'King2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'King"#) -}
+a6ffa6074e0986f58787b6313956f237
+  $tc'Number :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14297662054142082374##
+                   10878607622573473180##
+                   A1.$trModule
+                   A1.$tc'Number2
+                   0#
+                   A1.$tc'Number1) -}
+0f3aee39d032b61924cb8d82772f1035
+  $tc'Number1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+efabc4c6c04c840528bb57da659c5040
+  $tc'Number2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Number3) -}
+9e6ab12132d4745022b996eb2c8785fa
+  $tc'Number3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Number"#) -}
+1f0e9b4ae3c1ef6529cd7a3f54f6f797
+  $tc'Queen :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7281857832995942191##
+                   3948366932464726941##
+                   A1.$trModule
+                   A1.$tc'Queen1
+                   0#
+                   A1.$tc'Jack1) -}
+0c97e418279ebc55e77e07991e461eb6
+  $tc'Queen1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Queen2) -}
+4e2d697479cdd12d579a184f0ae70dca
+  $tc'Queen2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Queen"#) -}
+16a256b02fe29a4ac53ae54abc59720b
+  $tc'Royalty :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13572471823862591239##
+                   7803447683396708706##
+                   A1.$trModule
+                   A1.$tc'Royalty1
+                   0#
+                   A1.$tc'Ace1) -}
+8daaff3efc13bbd7314ad1a9f32f1f1a
+  $tc'Royalty1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Royalty2) -}
+bc6ad61101b161d6bd136248ab975f2f
+  $tc'Royalty2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Royalty"#) -}
+e160befbbf93e1dcdc444480ee5c5888
+  $tc'Spades :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7301232668458563243##
+                   14160761444818571594##
+                   A1.$trModule
+                   A1.$tc'Spades1
+                   0#
+                   A1.$tc'Clubs1) -}
+e31ddd4865ea2e99ec9fff702ce90b85
+  $tc'Spades1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tc'Spades2) -}
+878beb2b1c16402896465884c424aadf
+  $tc'Spades2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Spades"#) -}
+78985110db799eac70e99de025c5fe92
+  $tcAce :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10534517289766183786##
+                   6225536569875475137##
+                   A1.$trModule
+                   A1.$tcAce1
+                   0#
+                   GHC.Types.krep$*) -}
+cb6db666b83c97b85e576e2e123fe3fc
+  $tcAce1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$fShowRank6) -}
+9aea795438fe06e6396d6ee1686805b4
+  $tcCard :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16429530878523961669##
+                   2815076718707578888##
+                   A1.$trModule
+                   A1.$tcCard1
+                   0#
+                   GHC.Types.krep$*) -}
+186d43c02817758aa10951cdfa2cb7ec
+  $tcCard1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tcCard2) -}
+f4b64d40d577f1d086a407a700d1d4cf
+  $tcCard2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Card"#) -}
+503a4456ec37fcddfc2e731cc34b1c8a
+  $tcIndexed :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   763760745254651425##
+                   11868118549613846609##
+                   A1.$trModule
+                   A1.$tcIndexed1
+                   0#
+                   GHC.Types.krep$*->*->*) -}
+3657a277cc90ca70e4b977d0ec489a90
+  $tcIndexed1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tcIndexed2) -}
+9698a7dcb0fabd7af3e3d157de35edc8
+  $tcIndexed2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Indexed"#) -}
+82b23d7a56a51126c3aa4afe323829fa
+  $tcRank :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14510408230385334403##
+                   2368958508417862041##
+                   A1.$trModule
+                   A1.$tcRank1
+                   0#
+                   GHC.Types.krep$*) -}
+55cd5e2e393645bf7140859c92858574
+  $tcRank1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tcRank2) -}
+e94c3ab8b0b321e9d7023df5441ac3d2
+  $tcRank2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Rank"#) -}
+0f7ed09b32a28ef35765182e37ded259
+  $tcRoyalty :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11326470466841399215##
+                   2258500113931283667##
+                   A1.$trModule
+                   A1.$tcRoyalty1
+                   0#
+                   GHC.Types.krep$*) -}
+d1c30ec9a614cd41320110067f962ed7
+  $tcRoyalty1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$fShowRank4) -}
+aaccff6862942fdcb0c9efafec98db75
+  $tcSuit :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11079115946067438284##
+                   14854755015843715249##
+                   A1.$trModule
+                   A1.$tcSuit1
+                   0#
+                   GHC.Types.krep$*) -}
+0c7f0fc92f327a8b6849dde4a850becc
+  $tcSuit1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$tcSuit2) -}
+add13cc8354409d2b8731dfbdc4bf806
+  $tcSuit2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Suit"#) -}
+bf0c86a0d196c12ead5cd1e23c13b52d
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module A1.$trModule3 A1.$trModule1) -}
+144a252ea3196f78f5339c55d3afa000
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$trModule2) -}
+5cb265fe0035b82ca8aed16457c31811
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("A1"#) -}
+c738848c52ff883e07ea8b947949ebd9
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS A1.$trModule4) -}
+7ce496bd4fe88ce65b309f504576c8e9
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("A2-0.1.0.0-AR2U2L2vJyu6ScDncXoMy8"#) -}
+f36132121d52abd28f7a04360e5a49fb
+  $w$cshowsPrec ::
+    (GHC.Show.Show a, GHC.Show.Show i) =>
+    GHC.Prim.Int# -> i -> a -> GHC.Show.ShowS
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,1*U(1*C1(C1(C(U))),A,A)><L,1*U(1*C1(C1(C(U))),A,A)><S,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ i
+                   @ a
+                   (w :: GHC.Show.Show a)
+                   (w1 :: GHC.Show.Show i)
+                   (ww :: GHC.Prim.Int#)
+                   (ww1 :: i)
+                   (ww2 :: a) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec @ i w1 A1.$fShowIndexed3 ww1
+                 } in
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec @ a w A1.$fShowIndexed3 ww2
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.CString.unpackAppendCString#
+                        A1.$fShowIndexed2
+                        (f (GHC.Types.: @ GHC.Types.Char GHC.Show.showSpace1 (g x)))
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.$fShow(,)4
+                        (GHC.CString.unpackAppendCString#
+                           A1.$fShowIndexed2
+                           (f (GHC.Types.:
+                                 @ GHC.Types.Char
+                                 GHC.Show.showSpace1
+                                 (g (GHC.Types.: @ GHC.Types.Char GHC.Show.$fShow(,)2 x))))) }) -}
+d5232254204c619656784497c867c37a
+  $w$cshowsPrec1 :: A1.Rank -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: A1.Rank) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   A1.Ace -> GHC.Base.++ @ GHC.Types.Char A1.$fShowRank5 w1
+                   A1.Royalty -> GHC.Base.++ @ GHC.Types.Char A1.$fShowRank3 w1
+                   A1.Int -> GHC.Base.++ @ GHC.Types.Char A1.$fShowRank1 w1 }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $w$cshowsPrec2 :: A1.Royalty -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: A1.Royalty) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   A1.Jack -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard6 w1
+                   A1.Queen -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard4 w1
+                   A1.King -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard2 w1 }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $w$cshowsPrec3 :: A1.Suit -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: A1.Suit) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   A1.Hearts -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard14 w1
+                   A1.Diamonds -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard12 w1
+                   A1.Clubs -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard10 w1
+                   A1.Spades -> GHC.Base.++ @ GHC.Types.Char A1.$fShowCard8 w1 }) -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $w$ctoEnum :: GHC.Prim.Int# -> A1.Royalty
+  {- Arity: 1, Strictness: <S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 0#) of wild {
+                   GHC.Types.False -> A1.$wlvl ww
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<=# ww 2#) of wild1 {
+                        GHC.Types.False -> A1.$wlvl ww
+                        GHC.Types.True -> GHC.Prim.tagToEnum# @ A1.Royalty ww } }) -}
+62a306ae1ad75573a9640c203b62bcec
+  $w$ctoEnum1 :: GHC.Prim.Int# -> A1.Suit
+  {- Arity: 1, Strictness: <S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 0#) of wild {
+                   GHC.Types.False -> A1.$wlvl1 ww
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<=# ww 3#) of wild1 {
+                        GHC.Types.False -> A1.$wlvl1 ww
+                        GHC.Types.True -> GHC.Prim.tagToEnum# @ A1.Suit ww } }) -}
+14ccc3e0f89720d9114741718a332e94
+  $whandValue :: A1.Hand -> GHC.Prim.Int#
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  $wlvl :: GHC.Prim.Int# -> A1.Royalty
+  {- Arity: 1, Strictness: <B,U>x, Inline: [0] -}
+62a306ae1ad75573a9640c203b62bcec
+  $wlvl1 :: GHC.Prim.Int# -> A1.Suit
+  {- Arity: 1, Strictness: <B,U>x, Inline: [0] -}
+ac1505e5f8371e124ab1f1de7f4c6b23
+  data Ace = A
+0a0227d1a83b7d4061153473c3094502
+  data Card
+    = Number GHC.Types.Int A1.Suit
+    | Face A1.Royalty A1.Suit
+    | High A1.Suit
+ae16d35cb057fbb59e59bd826162cfac
+  type Deck = [A1.Card]
+2fa8dcc82d38c9c36ba8b4dbfaea5c01
+  type Hand = [A1.Card]
+6efe3bdf52f56a7a54ecde6b995182f2
+  data Indexed i a = Indx i a
+d5232254204c619656784497c867c37a
+  data Rank = Ace | Royalty | Int
+dbb5b37b95ed5ec649dcfd17932dcfc0
+  data Royalty = Jack | Queen | King
+62a306ae1ad75573a9640c203b62bcec
+  data Suit = Hearts | Diamonds | Clubs | Spades
+a777b12a43801fb99e58a75d3162e9ac
+  cardValue :: A1.Card -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (c :: A1.Card) ->
+                 case c of wild {
+                   A1.Number i ds -> i
+                   A1.Face ds ds1 -> A1.cardValue1
+                   A1.High ds -> A1.$fShowIndexed3 }) -}
+808b91b7db7b004019ed0c3be46af7f0
+  cardValue1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+e0fe4d2c555dccc2b1dd6cda4d03d8b4
+  combineFaces :: A1.Suit -> [A1.Royalty] -> [A1.Card]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U> -}
+a4813f50570fbc1db21320e8c880b1b7
+  combineNumbers :: A1.Suit -> [GHC.Types.Int] -> [A1.Card]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U> -}
+20e698170ae50e43adff99ae2ee5951f
+  createDeck ::
+    [A1.Suit] -> [A1.Royalty] -> [GHC.Types.Int] -> [A1.Card]
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,U><L,U> -}
+bf16c0ec45140e461239ecd734454c7f
+  createIndexList :: [i] -> [a] -> [A1.Indexed i a]
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+2b8939ccced11067cf66ef802168d1cc
+  faces :: [A1.Royalty]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.: @ A1.Royalty A1.Jack A1.faces1) -}
+db83e8209ccffd7e391de778db84b0f2
+  faces1 :: [A1.Royalty]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.: @ A1.Royalty A1.Queen A1.faces2) -}
+9ebc5441aecbb91fb01bb7e3d7392e0d
+  faces2 :: [A1.Royalty]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ A1.Royalty
+                   A1.King
+                   (GHC.Types.[] @ A1.Royalty)) -}
+c40b5af17f52869e8234e8e9b51231d0
+  fullDeck :: [A1.Card]
+  {- Unfolding: (A1.createDeck A1.suits A1.faces A1.numbers) -}
+8aa53dc7e3f29534a4800021db80303c
+  handValue :: A1.Hand -> GHC.Types.Int
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: A1.Hand) ->
+                 case A1.$whandValue w of ww { DEFAULT -> GHC.Types.I# ww }) -}
+925f530a472a9ab9510129c46d35ffd7
+  numbers :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   A1.numbers16
+                   A1.numbers1) -}
+0923cc59c046af3862780d0de38245a2
+  numbers1 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   A1.numbers15
+                   A1.numbers2) -}
+532f3ab5913440f6e96914ab5cf12c90
+  numbers10 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 8#) -}
+41c568713a269d154adc4e37536aada8
+  numbers11 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 7#) -}
+a435b87453bcd728b60269bf1d77d349
+  numbers12 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 6#) -}
+95c2ce3dfd58b25be8d09b03f6caca80
+  numbers13 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 5#) -}
+f0ccb40851ddd588cdef79629ac7e288
+  numbers14 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
+7304c678a2762471e887ebdce9e3a937
+  numbers15 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
+3a7394c1c0b3a4a47e3d85801bb8dfca
+  numbers16 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
+7f00c737c020c70d3bfefaca797fe2cc
+  numbers2 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   A1.numbers14
+                   A1.numbers3) -}
+5ae9f3557cb1e7660839b717a5c5627a
+  numbers3 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   A1.numbers13
+                   A1.numbers4) -}
+6387f512de71661f65d5c4082fb5dbd9
+  numbers4 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   A1.numbers12
+                   A1.numbers5) -}
+d11ec1aec7ac1c66f584c7b104a4fe92
+  numbers5 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   A1.numbers11
+                   A1.numbers6) -}
+d4cbf0165fb25b6f019de6df06d70d36
+  numbers6 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   A1.numbers10
+                   A1.numbers7) -}
+b2085b74fd9f411faaa9366e088e70f2
+  numbers7 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.: @ GHC.Types.Int A1.numbers9 A1.numbers8) -}
+4fbfd11630429abfcf78b418391cfaee
+  numbers8 :: [GHC.Types.Int]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Int
+                   A1.cardValue1
+                   (GHC.Types.[] @ GHC.Types.Int)) -}
+3cc890a019c487aade6e3b1980a86290
+  numbers9 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 9#) -}
+53e05c6e726640806131355aec489990
+  shuffle :: [GHC.Types.Int] -> [a] -> [a]
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a (a1 :: [GHC.Types.Int]) (b :: [a]) ->
+                 A1.stripIndexList
+                   @ GHC.Types.Int
+                   @ a
+                   (Data.OldList.sortBy
+                      @ (A1.Indexed GHC.Types.Int a)
+                      (A1.shuffle1 @ a)
+                      (A1.createIndexList @ GHC.Types.Int @ a a1 b))) -}
+abbf5e53e99fa392f5a403603121d3d0
+  shuffle1 ::
+    A1.Indexed GHC.Types.Int a
+    -> A1.Indexed GHC.Types.Int a -> GHC.Types.Ordering
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),A)><S(S(S)L),1*U(1*U(U),A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   (ds :: A1.Indexed GHC.Types.Int a)
+                   (ds1 :: A1.Indexed GHC.Types.Int a)[OneShot] ->
+                 case ds of wild { A1.Indx x ds2 ->
+                 case ds1 of wild1 { A1.Indx y ds3 ->
+                 GHC.Classes.compareInt x y } }) -}
+369dfbfe4670b482a6a56abb318a9715
+  stripIndexList :: [A1.Indexed i a] -> [a]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+88978a27bd6106d01b82f02908b2555b
+  suits :: [A1.Suit]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.: @ A1.Suit A1.Hearts A1.suits1) -}
+89bc8e56b6a0d75e1c51dc10143160e7
+  suits1 :: [A1.Suit]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.: @ A1.Suit A1.Diamonds A1.suits2) -}
+6ebeb63fd963276c15df8c86bbcf0aab
+  suits2 :: [A1.Suit]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.: @ A1.Suit A1.Clubs A1.suits3) -}
+17a6d2c1261bc12f330eef016b6a1591
+  suits3 :: [A1.Suit]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ A1.Suit
+                   A1.Spades
+                   (GHC.Types.[] @ A1.Suit)) -}
+instance [safe] GHC.Enum.Enum [A1.Royalty] = A1.$fEnumRoyalty
+instance [safe] GHC.Enum.Enum [A1.Suit] = A1.$fEnumSuit
+instance [safe] GHC.Classes.Eq [A1.Ace] = A1.$fEqAce
+instance [safe] GHC.Classes.Eq [A1.Indexed] = A1.$fEqIndexed
+instance [safe] GHC.Classes.Eq [A1.Rank] = A1.$fEqRank
+instance [safe] GHC.Classes.Eq [A1.Royalty] = A1.$fEqRoyalty
+instance [safe] GHC.Classes.Eq [A1.Suit] = A1.$fEqSuit
+instance [safe] GHC.Classes.Ord [A1.Indexed] = A1.$fOrdIndexed
+instance [safe] GHC.Classes.Ord [A1.Royalty] = A1.$fOrdRoyalty
+instance [safe] GHC.Show.Show [A1.Ace] = A1.$fShowAce
+instance [safe] GHC.Show.Show [A1.Card] = A1.$fShowCard
+instance [safe] GHC.Show.Show [A1.Indexed] = A1.$fShowIndexed
+instance [safe] GHC.Show.Show [A1.Rank] = A1.$fShowRank
+instance [safe] GHC.Show.Show [A1.Royalty] = A1.$fShowRoyalty
+instance [safe] GHC.Show.Show [A1.Suit] = A1.$fShowSuit
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
