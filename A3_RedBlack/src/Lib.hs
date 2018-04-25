@@ -1,6 +1,5 @@
 module Lib where
 
-
 data Color = R | B
   deriving (Eq, Show)
 data RBTree a = L | N Color (RBTree a) a (RBTree a)
@@ -35,9 +34,20 @@ balance tree = do
     _ -> tree
 
 -- Exercise 1.3
+ins :: Ord a => a -> RBTree a -> RBTree a
+ins x L = (N R L x L)
+ins x (N color left y right)
+  | x == y = (N color left x right)
+  | x > y = balance (ins x left)
+  | x < y = balance (ins x right)
 
 
+insert :: Ord a => a -> RBTree a -> RBTree a
+insert x t = blackenRoot (ins x t)
 
+-- Exercise 2.1
+-- toList :: RBTree a -> [a]
+-- fromList :: Ord a => [a] -> RBTree a
 
 
 
