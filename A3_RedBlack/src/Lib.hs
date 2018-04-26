@@ -38,9 +38,8 @@ ins :: Ord a => a -> RBTree a -> RBTree a
 ins x L = (N R L x L)
 ins x (N color left y right)
   | x == y = (N color left x right)
-  | x > y = balance (N color (ins x left) y right)
-  | x < y = balance (N color left y (ins x right))
-
+  | x > y = balance (N color left y (ins x right))
+  | x < y = balance (N color (ins x left) y right)
 
 insert :: Ord a => a -> RBTree a -> RBTree a
 insert x t = blackenRoot (ins x t)
@@ -48,9 +47,11 @@ insert x t = blackenRoot (ins x t)
 -- Exercise 2.1
 toList :: RBTree a -> [a]
 toList L = []
--- toList (N color left val right) = 
+toList (N color left val right) = (toList left) ++ [val] ++ (toList right)
 
 -- fromList :: Ord a => [a] -> RBTree a
+fromList [] = L
+fromList (item: itemList) = insert item (fromList itemList)
 
 
 
