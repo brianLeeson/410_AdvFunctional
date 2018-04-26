@@ -53,6 +53,20 @@ toList (N color left val right) = (toList left) ++ [val] ++ (toList right)
 fromList [] = L
 fromList (item: itemList) = insert item (fromList itemList)
 
+-- trees are equal if their in order traversal values are equal.
+instance Eq a => Eq (RBTree a) where
+  tree1 == tree2 = (toList tree1) == (toList tree2)
 
+-- Exercise 2.2
+rootColor :: RBTree a -> Color
+rootColor L = B
+rootColor (N color left val right) = color
+
+--colorValue :: Color -> Int
+colorValue R = 0
+colorValue B = 1
+
+-- Exercise 2.3
+type Path a = [(Color, a)]
 
 
