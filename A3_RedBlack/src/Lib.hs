@@ -69,4 +69,11 @@ colorValue B = 1
 -- Exercise 2.3
 type Path a = [(Color, a)]
 
+paths :: RBTree a -> [Path a]
+paths L = [[]]
+paths (N color left value right) = [(color, value) : p | p <- paths left ] ++  [(color, value) : p | p <- paths right ]
+
+
+
+
 
