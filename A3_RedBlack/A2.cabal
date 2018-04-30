@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d48a6f65d1d3d9d247074f63bd1ed2d32a3ea45caf945d4fe337db846f4aa680
+-- hash: 298c05436362132069f3d29e688b188031ce96c3a7db5757b1139773da898f01
 
 name:           A2
 version:        0.1.0.0
@@ -29,7 +29,9 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
+    , hspec
   exposed-modules:
       Lib
   other-modules:
@@ -43,7 +45,9 @@ executable A3-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       A2
+    , QuickCheck
     , base >=4.7 && <5
+    , hspec
   other-modules:
       Paths_A2
   default-language: Haskell2010
@@ -56,7 +60,9 @@ test-suite A2-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       A2
+    , QuickCheck
     , base >=4.7 && <5
+    , hspec
   other-modules:
       Paths_A2
   default-language: Haskell2010

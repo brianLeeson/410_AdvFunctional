@@ -1,5 +1,8 @@
 module Lib where
 
+import Test.QuickCheck hiding (shuffle)
+import Test.Hspec
+
 data Color = R | B
   deriving (Eq, Show)
 data RBTree a = L | N Color (RBTree a) a (RBTree a)
@@ -73,7 +76,41 @@ paths :: RBTree a -> [Path a]
 paths L = [[]]
 paths (N color left value right) = [(color, value) : p | p <- paths left ] ++  [(color, value) : p | p <- paths right ]
 
+-- Exercise 3.1
+instance (Arbitrary a, Ord a) => Arbitrary (RBTree a) where
+  arbitrary = do
+    [a] <- arbitrary
+    return (fromList a)
 
+-- Exercise 3.2
+-- found on Stack
+isSorted :: (Ord a) => [a] -> Bool
+isSorted []       = True
+isSorted [x]      = True
+isSorted (x:y:xs) = x <= y && isSorted (y:xs)
+
+inOrder :: RBTree Int -> Bool
+inOrder L = True
+inOrder tree = isSorted treeList
+  where treeList = toList tree
+
+
+isBlackRoot :: RBTree Int -> Bool
+isBlackRoot L = True
+isBlackRoot (N color left val right) = color == B
+
+childColor (N color left value right) = color
+
+noRedChain :: RBTree Int -> Bool
+noRedChain L = True
+noRedChain (N B left value right) = (noRedChain left) && (noRedChain right)
+noRedChain (N R left value right) = 
+  if (childColor left) /= R && (childColor right) /= R 
+  then (noRedChain left) && (noRedChain right) 
+  else False
+
+
+-- samePathValues :: RBTree Int -> Bool
 
 
 
