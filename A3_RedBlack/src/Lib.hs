@@ -52,7 +52,7 @@ toList :: RBTree a -> [a]
 toList L = []
 toList (N color left val right) = (toList left) ++ [val] ++ (toList right)
 
--- fromList :: Ord a => [a] -> RBTree a
+fromList :: Ord a => [a] -> RBTree a
 fromList [] = L
 fromList (item: itemList) = insert item (fromList itemList)
 
@@ -99,6 +99,7 @@ isBlackRoot :: RBTree Int -> Bool
 isBlackRoot L = True
 isBlackRoot (N color left val right) = color == B
 
+childColor L = B
 childColor (N color left value right) = color
 
 noRedChain :: RBTree Int -> Bool
@@ -109,8 +110,21 @@ noRedChain (N R left value right) =
   then (noRedChain left) && (noRedChain right) 
   else False
 
+valuatePath [] = 0
+valuatePath (x:xs) = case x of
+  (B, _) -> 1 + (valuatePath xs)
+  (R, _) -> 0 + (valuatePath xs)
 
--- samePathValues :: RBTree Int -> Bool
+-- allTheSame found on stack
+allTheSame :: (Eq a) => [a] -> Bool
+allTheSame xs = and $ map (== head xs) (tail xs)
+
+samePathValues :: RBTree Int -> Bool
+samePathValues L = True
+samePathValues tree = allTheSame [(valuatePath path) | path <- (paths tree)]
+
+
+
 
 
 
