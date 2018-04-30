@@ -128,3 +128,5 @@ samePathValues tree = allTheSame [(valuatePath path) | path <- (paths tree)]
 
 
 
+
+
