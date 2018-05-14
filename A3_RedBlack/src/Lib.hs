@@ -79,7 +79,7 @@ paths (N color left value right) = [(color, value) : p | p <- paths left ] ++  [
 -- Exercise 3.1
 instance (Arbitrary a, Ord a) => Arbitrary (RBTree a) where
   arbitrary = do
-    [a] <- arbitrary
+    a <- arbitrary
     return (fromList a)
 
 -- Exercise 3.2

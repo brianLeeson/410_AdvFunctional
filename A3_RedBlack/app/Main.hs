@@ -1,13 +1,16 @@
 module Main where
 
+import Test.QuickCheck
+import Test.Hspec
+
 import Lib
 
 main :: IO ()
 main = do
-  putStrLn "Hello, World!"  
-
-
-
+  quickCheck inOrder          
+  quickCheck isBlackRoot          
+  quickCheck noRedChain         
+  quickCheck samePathValues
 
     
 
