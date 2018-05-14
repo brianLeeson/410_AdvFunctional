@@ -1,0 +1,62 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fd7ae63d23c4b3871459c7281961634f85a1c070d6d3f410232655dd841797e5
+
+name:           A4
+version:        0.1.0.0
+description:    NA
+homepage:       https://github.com/#readme
+bug-reports:    https://github.com//issues
+author:         Brian Leeson
+maintainer:     brianeleeson@gmail.com
+copyright:      2018 Brian Leeson
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_A4
+  default-language: Haskell2010
+
+executable A4-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      A4
+    , base >=4.7 && <5
+  other-modules:
+      Paths_A4
+  default-language: Haskell2010
+
+test-suite A4-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      A4
+    , base >=4.7 && <5
+  other-modules:
+      Paths_A4
+  default-language: Haskell2010
