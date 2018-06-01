@@ -4,6 +4,7 @@ import qualified Data.Map as Map
 
 -- Pieces - either X or O or Empty space
 data Piece = X | O | Empty
+    deriving (Eq)
   
 instance Show Piece where
   show X = "X"
@@ -18,7 +19,10 @@ type Column = Map.Map Int Piece
 -- https://hackage.haskell.org/package/containers-0.4.0.0/docs/Data-Map.html
 type Board = Map.Map Int Column
 
+emptyColumn :: Column
 emptyColumn = Map.fromList([(0,Empty),(1,Empty),(2,Empty),(3,Empty),(4,Empty),(5,Empty),(6,Empty)])
+
+emptyBoard :: Board
 emptyBoard = Map.fromList([(0, emptyColumn),(1, emptyColumn),(2, emptyColumn),(3, emptyColumn),(4, emptyColumn),(5, emptyColumn),(6, emptyColumn)])
 
 -- function that takes a board a prints it.
@@ -35,19 +39,37 @@ boardPeek (row, col) board = do
     colMap <- Map.lookup col board
     Map.lookup row colMap
 
--- function takes a tuple (a,b), a Board, a Piece, and returns an updated Board with the piece at Board[a][b]
+-- function takes a tuple (a,b), a Board, a Piece, and returns an updated Board with the piece at Board[a][b]. fails if col (a) doesn't exist or is full
 boardInsert :: (Int, Int) -> Piece -> Board -> Maybe Board
-boardInsert (row, col) piece board = do 
-    oldCol <- Map.lookup col board    
-    Just (Map.insert col (Map.insert row piece oldCol) board)
+boardInsert (rowIndex, colIndex) piece board = do 
+    oldCol <- Map.lookup colIndex board
+    topPiece <- Map.lookup 0 oldCol
+    if topPiece /= Empty 
+        then Nothing 
+        else Just (Map.insert colIndex (Map.insert rowIndex piece oldCol) board)
+    
+      
+    
 
--- function that takes a column index, piece, board and places that piece in that column. 
+-- function that takes a column index, piece, board and places that piece in that column, in the lowest empty row
 -- evaluates to nothing if that column doesn't exist or is full
 -- evaluates to Just  an updated board otherwise
 playPiece :: Int -> Piece -> Board -> Board
 playPiece col piece board = undefined
 
 
+-- function takes a piece and a board returns a new board. places piece in board at user defined column
+makeMove :: Piece -> Board -> Board
+makeMove piece board = undefined
+    --putStrLn "The board looks like this:"
+    --print the board
+
+    --putStrLn "Which column would you like to play in? [0-6]"
+    --answer <- prompt "What's my number?"
+    --let guess = read answer :: Int
+
+    -- check if valid move
+    --repeatUntilTrue  () -- try to play a piece
 
 -- Game Control, based on lecture 3
 theLine :: IO String
