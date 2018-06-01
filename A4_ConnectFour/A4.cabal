@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 825cc50e588f753ca03deaea26483301d270c75c6264f54cf9f35fbc6be61930
+-- hash: dbb5203827da78e289e89940e814bcb2ea1175a8a4e7ef7107da92fe633e66a4
 
 name:           A4
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
   build-depends:
       base >=4.7 && <5
     , containers
+    , random
   exposed-modules:
       Lib
   other-modules:
@@ -46,6 +47,7 @@ executable A4-exe
       A4
     , base >=4.7 && <5
     , containers
+    , random
   other-modules:
       Paths_A4
   default-language: Haskell2010
@@ -60,6 +62,7 @@ test-suite A4-test
       A4
     , base >=4.7 && <5
     , containers
+    , random
   other-modules:
       Paths_A4
   default-language: Haskell2010
