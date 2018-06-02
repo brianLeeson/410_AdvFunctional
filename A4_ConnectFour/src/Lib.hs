@@ -93,23 +93,50 @@ playPiece rowIndex colIndex piece board = do
                         Nothing -> playPiece (rowIndex-1) colIndex piece board
                         Just aBoard -> Just aBoard
 
+isGameOver :: Board -> Bool
+isGameOver board = undefined
 
--- Game Control, based on lecture 3
-theLine :: IO String
-theLine = getLine
+
+checkRows = undefined
+
+checkRow = undefined
+
+checkCols = undefined
+-- find initial piece
+-- start looking at initalPosition+1
+
+checkCol :: Int -> Int -> Piece -> Int -> Board -> Bool
+checkCol rowIndex colIndex prevPiece seqCount board = 
+    --Base Case: seqCount == 4 in a row
+    if seqCount == 4 then True else
+
+    -- find current piece (board[rowIndex][colIndex])
+    let maybePiece = boardPeek rowIndex colIndex board in
+        case maybePiece of
+            Nothing -> False -- we've run off the board before finding a sequence
+            Just curPiece -> do 
+                                if (curPiece == prevPiece) && (curPiece /= Empty)
+                                    -- found a run of at least two
+                                    then checkCol (rowIndex+1) colIndex curPiece (seqCount+1) board
+                                    -- run stopped. reset seqCount
+                                    else checkCol (rowIndex+1) colIndex curPiece 0 board
+                 
+
+checkFwdSlashs = undefined
+
+checkFwdSlash = undefined
+
+checkBckSlashs = undefined
+
+checkBckSlash = undefined
+
+-- Game Control, based on 410 lecture 3
 
 -- Prompt a user for input by first displaying a question and then waiting for
 -- their answer.
 prompt :: String -> IO String
 prompt question = do putStrLn question
                      getLine
-
--- Greet the user by first asking for their name, and then saying hello.
-greet :: IO ()
-greet = do
-  name <- prompt "Who is this?"
-  let greeting = "Hello, " ++ name ++ "!"
-  putStrLn greeting
 
 -- For example, 'forever' runs the given IO action forever.
 forever :: IO a -> IO b
