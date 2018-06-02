@@ -16,11 +16,11 @@ newGame = do
     putStrLn "\nStarting a new game..."
     numPlayers <- prompt "How many human players? (1 or 2)"
     if numPlayers == "1" then putStrLn ("Player1 vs. Compueter!") else putStrLn ("Player1 vs. Player2!")
-    repeatUntilTrue (playGame numPlayers X emptyBoard)
+    playGame numPlayers X emptyBoard
     return ()
 
 -- Have the user pick a column to play in. Returns True if four of the same pieces are connected, meaning game over
-playGame :: String -> Piece -> Board -> IO Bool
+playGame :: String -> Piece -> Board -> IO ()
 playGame numPlayers currentPiece currentBoard = do
     --playerTurn
     putStrLn "The board looks like this:"
@@ -44,27 +44,16 @@ playGame numPlayers currentPiece currentBoard = do
                            Nothing -> do putStrLn ("Column " ++ col ++ "is full, please try again")
                                          playGame numPlayers currentPiece currentBoard
                            -- placing succeded. continue
-                           Just board -> do displayBoard 0 0 board
-                                            undefined
+                           Just newBoard -> do let continue = isGameOver newBoard in 
+                                                   case continue of
+                                                       False -> undefined
+                                                       True -> do displayBoard 0 0 newBoard
+                                                                  putStrLn " --- Game Over --- "
                                             --check game state. if game over, return Bool, else, recur with opposite piece and new board
     
 
 
   
-
-
-    answer <- prompt "What's my number?"
-    let pickedColumn = read answer :: Int
-        sensible = all isDigit answer
-    case (sensible, compare pickedColumn 4) of
-        (False, _) -> do putStrLn "That's not even a number!"
-                         return False
-        (True, LT) -> do putStrLn "That's too low."
-                         return False
-        (True, GT) -> do putStrLn "That's too high."
-                         return False
-        (True, EQ) -> do putStrLn "That's it!"
-                         return True
 
     
 

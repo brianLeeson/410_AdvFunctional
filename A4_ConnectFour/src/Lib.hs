@@ -94,7 +94,16 @@ playPiece rowIndex colIndex piece board = do
                         Just aBoard -> Just aBoard
 
 isGameOver :: Board -> Bool
-isGameOver board = undefined
+isGameOver board = 
+    let
+        row = checkRows 0 board
+        col = checkCols 0 board
+        bSlash1 = checkBckSlashs 0 0 board
+        bSlash2 = checkBckSlashs 2 0 board
+        fwdSlash1 = checkFwdSlashs 0 0 board
+        fwdSlash2 = checkFwdSlashs 2 0 board
+    in row || col || bSlash1 || bSlash2 || fwdSlash1 || fwdSlash2
+
 
 -- meant to start looking at (0,0)
 checkRows :: Int -> Board -> Bool
