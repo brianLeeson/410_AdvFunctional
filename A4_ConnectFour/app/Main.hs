@@ -16,18 +16,39 @@ newGame = do
     putStrLn "\nStarting a new game..."
     numPlayers <- prompt "How many human players? (1 or 2)"
     if numPlayers == "1" then putStrLn ("Player1 vs. Compueter!") else putStrLn ("Player1 vs. Player2!")
-    repeatUntilTrue (playGame numPlayers emptyBoard)
+    repeatUntilTrue (playGame numPlayers X emptyBoard)
     return ()
 
 -- Have the user pick a column to play in. Returns True if four of the same pieces are connected, meaning game over
-playGame :: String -> Board -> IO Bool
-playGame numPlayers currentBoard = do
+playGame :: String -> Piece -> Board -> IO Bool
+playGame numPlayers currentPiece currentBoard = do
+    --playerTurn
+    putStrLn "The board looks like this:"
+    --print the board TODO
+
+    --ask for a move
+    col <- prompt "Which column would you like to play in? [0-6]"
+    let guess = read col :: Int
+
+    -- check if valid move
+    let isValidPos = ((0 <= guess) && (guess <= 6))
+    case isValidPos of 
+        -- chosen col num is out of bounds
+        False -> do putStrLn ("invalid column " ++ col ++ ", please try again")
+                    playGame numPlayers currentPiece currentBoard
+        -- col inbounds. attempt to place piece in column
+        True -> do let attemptToPlace = playPiece guess currentPiece currentBoard in
+                       case attemptToPlace of
+                           -- placing failed. column full. try again
+                           Nothing -> do putStrLn ("Column " ++ col ++ "is full, please try again")
+                                         playGame numPlayers currentPiece currentBoard
+                           -- placing succeded. continue
+                           Just board -> do undefined
+                                            --check game state. if game over, return Bool, else, recur with opposite piece and new board
     
-    -- make move
 
-    -- check game state
 
-    -- return Bool based on game state
+  
 
 
     answer <- prompt "What's my number?"
