@@ -96,23 +96,45 @@ playPiece rowIndex colIndex piece board = do
 isGameOver :: Board -> Bool
 isGameOver board = undefined
 
+-- meant to start looking at (0,0)
 checkRows :: Int -> Board -> Bool
-checkRows rowIndex board = undefined
+checkRows rowIndex board =
+    -- find initial piece
+    let maybePiece = boardPeek rowIndex colMin board in
+        case maybePiece of
+            --This should happen when we run out of rows
+            Nothing -> False 
+            -- start looking at initalPosition+1
+            Just initialPiece -> let itsOver = checkRow rowIndex (colMin+1) initialPiece 1 board in
+                                     if itsOver then True else checkRows (rowIndex+1) board
 
+checkRow :: Int -> Int -> Piece -> Int -> Board -> Bool
+checkRow rowIndex colIndex prevPiece seqCount board =
+    --Base Case: seqCount == 4 in a row
+    if seqCount == 4 then True else
 
-checkRow = undefined
+    -- find current piece (board[rowIndex][colIndex])
+    let maybePiece = boardPeek rowIndex colIndex board in
+        case maybePiece of
+            Nothing -> False -- we've run off the board before finding a sequence
+            Just curPiece -> do 
+                                if (curPiece == prevPiece) && (curPiece /= Empty)
+                                    -- found a run of at least two
+                                    then checkRow rowIndex (colIndex+1) curPiece (seqCount+1) board
+                                    -- run stopped. reset seqCount
+                                    else checkRow rowIndex (colIndex+1) curPiece 0 board
 
+-- meant to start looking at (0,0)
 checkCols :: Int -> Board -> Bool
 checkCols colIndex board =
     -- find initial piece
     let maybePiece = boardPeek rowMin colIndex board in
         case maybePiece of
-            --This should never happens
-            Nothing -> False --
+            --This should happen when we run out of cols
+            Nothing -> False 
             -- start looking at initalPosition+1
-            Just initialPiece -> checkCol (rowMin+1) colIndex initialPiece 1 board
-
-
+            Just initialPiece -> let itsOver = checkCol (rowMin+1) colIndex initialPiece 1 board in
+                                     if itsOver then True else checkCols (colIndex+1) board
 
 checkCol :: Int -> Int -> Piece -> Int -> Board -> Bool
 checkCol rowIndex colIndex prevPiece seqCount board = 
@@ -129,15 +151,63 @@ checkCol rowIndex colIndex prevPiece seqCount board =
                                     then checkCol (rowIndex+1) colIndex curPiece (seqCount+1) board
                                     -- run stopped. reset seqCount
                                     else checkCol (rowIndex+1) colIndex curPiece 0 board
-                 
 
-checkFwdSlashs = undefined
+-- meant to start looking at (0,0)
+checkBckSlashs :: Int -> Int -> Board -> Bool
+checkBckSlashs rowIndex colIndex board = 
+    -- find initial piece
+    let maybePiece = boardPeek rowIndex colIndex board in
+        case maybePiece of
+            --This should happen when we run off the board
+            Nothing -> False 
+            -- start looking at initalPosition+1
+            Just initialPiece -> let itsOver = checkBckSlash (rowIndex+1) (colIndex+1) initialPiece 1 board in
+                                     if itsOver then True else checkBckSlashs rowIndex (colIndex+1) board
 
-checkFwdSlash = undefined
+checkBckSlash :: Int -> Int -> Piece -> Int -> Board -> Bool
+checkBckSlash rowIndex colIndex prevPiece seqCount board = 
+    --Base Case: seqCount == 4 in a row
+    if seqCount == 4 then True else
 
-checkBckSlashs = undefined
+    -- find current piece (board[rowIndex][colIndex])
+    let maybePiece = boardPeek rowIndex colIndex board in
+        case maybePiece of
+            Nothing -> False -- we've run off the board before finding a sequence
+            Just curPiece -> do 
+                                if (curPiece == prevPiece) && (curPiece /= Empty)
+                                    -- found a run of at least two
+                                    then checkBckSlash (rowIndex+1) (colIndex+1) curPiece (seqCount+1) board
+                                    -- run stopped. reset seqCount
+                                    else checkBckSlash (rowIndex+1) (colIndex+1) curPiece 0 board
 
-checkBckSlash = undefined
+-- meant to start looking at (0,0)
+checkFwdSlashs :: Int -> Int -> Board -> Bool
+checkFwdSlashs rowIndex colIndex board = 
+    -- find initial piece
+    let maybePiece = boardPeek rowIndex colIndex board in
+        case maybePiece of
+            --This should happen when we run off the board
+            Nothing -> False 
+            -- start looking at initalPosition+1
+            Just initialPiece -> let itsOver = checkFwdSlash (rowIndex+1) (colIndex-1) initialPiece 1 board in
+                                     if itsOver then True else checkFwdSlashs rowIndex (colIndex+1) board
+
+checkFwdSlash :: Int -> Int -> Piece -> Int -> Board -> Bool
+checkFwdSlash rowIndex colIndex prevPiece seqCount board = 
+    --Base Case: seqCount == 4 in a row
+    if seqCount == 4 then True else
+
+    -- find current piece (board[rowIndex][colIndex])
+    let maybePiece = boardPeek rowIndex colIndex board in
+        case maybePiece of
+            Nothing -> False -- we've run off the board before finding a sequence
+            Just curPiece -> do 
+                                if (curPiece == prevPiece) && (curPiece /= Empty)
+                                    -- found a run of at least two
+                                    then checkFwdSlash (rowIndex+1) (colIndex-1) curPiece (seqCount+1) board
+                                    -- run stopped. reset seqCount
+                                    else checkFwdSlash (rowIndex+1) (colIndex-1) curPiece 0 board
+
 
 -- Game Control, based on 410 lecture 3
 
