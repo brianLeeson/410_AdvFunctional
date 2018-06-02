@@ -19,63 +19,84 @@ type Column = Map.Map Int Piece
 -- https://hackage.haskell.org/package/containers-0.4.0.0/docs/Data-Map.html
 type Board = Map.Map Int Column
 
+--Globals
+rowMin = 0 :: Int
+rowMax = 5 :: Int
+colMin = 0 :: Int
+colMax = 6 :: Int
+
 emptyColumn :: Column
-emptyColumn = Map.fromList([(0,Empty),(1,Empty),(2,Empty),(3,Empty),(4,Empty),(5,Empty),(6,Empty)])
+emptyColumn = Map.fromList([(0,Empty),(1,Empty),(2,Empty),(3,Empty),(4,Empty),(5,Empty)])
 
 emptyBoard :: Board
 emptyBoard = Map.fromList([(0, emptyColumn),(1, emptyColumn),(2, emptyColumn),(3, emptyColumn),(4, emptyColumn),(5, emptyColumn),(6, emptyColumn)])
 
+testColumn1 :: Column
+testColumn1 = Map.fromList([(0,Empty),(1,Empty),(2,Empty),(3,Empty),(4,Empty),(5,Empty)])
+
+testColumn2 :: Column
+testColumn2 = Map.fromList([(0,X),(1,X),(2,X),(3,X),(4,X),(5,X)])
+
+testColumn3 :: Column
+testColumn3 = Map.fromList([(0,Empty),(1,Empty),(2,X),(3,O),(4,O),(5,X)])
+
+testBoard :: Board
+testBoard = Map.fromList([(0, testColumn1),(1, testColumn2),(2, testColumn2),(3, testColumn2),(4, testColumn2),(5, testColumn3),(6, testColumn1)])
+
+-- End Globals
+
 -- function that takes a board a prints it.
-displayBoard :: Board -> IO()
-displayBoard = undefined
+displayBoard :: Int -> Int -> Board-> IO()
+displayBoard rowIndex colIndex board = do
+    let isValidRow = ((0 <= rowIndex) && (rowIndex <= 5)) in
+        case isValidRow of
+            False -> putStrLn "\n"
+            True -> do displayRow rowIndex colIndex "| " board
+                       displayBoard (rowIndex+1) colIndex board
+    
 
 -- function that takes a column and prints it
-displayColumn :: Board -> IO()
-displayColumn = undefined
+displayRow :: Int -> Int -> String -> Board-> IO()
+displayRow rowIndex colIndex rowAsString board = do
+    let maybePiece = boardPeek rowIndex colIndex board in
+        case maybePiece of
+            Nothing -> putStrLn (rowAsString ++ "\n-----------------------------")
+            Just piece -> displayRow rowIndex (colIndex+1) (rowAsString ++ (show piece) ++ " | " ) board
+        
 
 -- function takes a tuple (row, col), a Board and returns the Piece at Board[col][row], [0][0] is top left
-boardPeek :: (Int, Int) -> Board -> Maybe Piece
-boardPeek (row, col) board = do 
+boardPeek :: Int -> Int -> Board -> Maybe Piece
+boardPeek row col board = do 
     colMap <- Map.lookup col board
     Map.lookup row colMap
 
 -- function takes a tuple (row,col), a Board, a Piece, and returns an updated Board with the piece at Board[col][row]. 
--- fails if board[col][row] doesn't exist or is full or 
+-- fails if board[col][row] doesn't exist or is already occupied
 boardInsert :: (Int, Int) -> Piece -> Board -> Maybe Board
 boardInsert (rowIndex, colIndex) piece board = do 
-    -- TODO row, col range check
     oldCol <- Map.lookup colIndex board
-    topPiece <- Map.lookup 0 oldCol
-    if topPiece /= Empty 
-        then Nothing 
-        else Just (Map.insert colIndex (Map.insert rowIndex piece oldCol) board)
+    targetPiece <- Map.lookup rowIndex oldCol
+    if targetPiece /= Empty 
+        then Nothing -- space is taken by a piece already
+        else Just (Map.insert colIndex (Map.insert rowIndex piece oldCol) board) -- space is empty
 
 -- function that takes a column index, piece, board and places that piece in that column, in the lowest empty row
 -- evaluates to nothing if that column doesn't exist or is full
 -- evaluates to Just  an updated board otherwise
-playPiece :: Int -> Piece -> Board -> Maybe Board
-playPiece col piece board = undefined
-
-
--- function takes a piece and a board returns a new board. places piece in board at user defined column
-playerTurn :: Piece -> Board -> Board
-playerTurn piece board = undefined
+playPiece :: Int -> Int -> Piece -> Board -> Maybe Board
+playPiece rowIndex colIndex piece board = do
+    let isValidRow = ((0 <= rowIndex) && (rowIndex <= 5))
+    case isValidRow of
+        False -> Nothing
+        True -> let attempt = boardInsert (rowIndex, colIndex) piece board in
+                    case attempt of
+                        Nothing -> playPiece (rowIndex-1) colIndex piece board
+                        Just aBoard -> Just aBoard
 
 
 -- Game Control, based on lecture 3
 theLine :: IO String
 theLine = getLine
-
--- To chain together several actions, use a 'do' expression.
-getTwoLines :: IO (String, String)
-getTwoLines = do first <- getLine
-                 second <- getLine
-                 return (first, second)
-
-putTwoLines :: String -> String -> IO ()
-putTwoLines first second = do
-  putStrLn first
-  putStrLn second
 
 -- Prompt a user for input by first displaying a question and then waiting for
 -- their answer.
