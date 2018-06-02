@@ -1,10 +1,11 @@
+-- Author: Brian Leeson
+
 module Main where
 
 import Lib
 import qualified Data.Map as Map
 import Data.Char
 import System.Random
-
 
 main :: IO ()
 main = do
@@ -13,8 +14,6 @@ main = do
     
 newGame :: IO ()
 newGame = do
-    --secret <- randomRIO range
-    --let (low, high) = range
     putStrLn "\nStarting a new game..."
     numPlayers <- prompt "How many human players? (1 or 2)"
     if numPlayers == "1" then putStrLn ("Player1 vs. Computer!\n") else putStrLn ("Player1 vs. Player2!\n")
@@ -32,8 +31,7 @@ playGame numPlayers currentPiece currentBoard = do
     if (numPlayers == "1") && (currentPiece == O) 
         then do
                    roboChoice <- randomRIO (colMin, colMax)
-               
-                   --putStrLn "BEEP BOOP --- PICKED COLUMN " ++ roboChoice
+                   putStrLn ("BEEP BOOP, PICKED COLUMN " ++ (show roboChoice))
                    case playPiece rowMax roboChoice currentPiece currentBoard  of
                         -- placing failed. column full. try again
                         Nothing -> do putStrLn ("Column " ++  (show roboChoice) ++ " is full, please try again")

@@ -42,7 +42,6 @@ testColumn3 = Map.fromList([(0,Empty),(1,Empty),(2,X),(3,O),(4,O),(5,X)])
 
 testBoard :: Board
 testBoard = Map.fromList([(0, testColumn1),(1, testColumn2),(2, testColumn2),(3, testColumn2),(4, testColumn2),(5, testColumn3),(6, testColumn1)])
-
 -- End Globals
 
 -- function that takes a board a prints it.
