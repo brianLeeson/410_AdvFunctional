@@ -96,21 +96,29 @@ playPiece rowIndex colIndex piece board = do
 isGameOver :: Board -> Bool
 isGameOver board = undefined
 
+checkRows :: Int -> Board -> Bool
+checkCols rowIndex board =
+    -- find initial piece
+    let maybePiece = boardPeek rowIndex 0 board in
+        case maybePiece of
+            --This happens when we run out of rows
+            Nothing -> False 
+            -- start looking at initalPosition+1
+            Just initialPiece -> do let colWin = checkCol 0 0 initialPiece 1 board in
+                                        if colWin then True else checkCols (colIndex+1) board
 
-checkRows = undefined
 
 checkRow = undefined
 
 checkCols :: Int -> Board -> Bool
 checkCols colIndex board =
     -- find initial piece
-    let maybePiece = boardPeek 0 colIndex board in
+    let maybePiece = boardPeek rowMin colIndex board in
         case maybePiece of
-            --This happens when we run out of columns
-            Nothing -> False 
+            --This should never happens
+            Nothing -> False --
             -- start looking at initalPosition+1
-            Just initialPiece -> do let colWin = checkCol 0 0 initialPiece 1 board in
-                                        if colWin then True else checkCols (colIndex+1) board
+            Just initialPiece -> checkCol (rowMin+1) colIndex initialPiece 1 board
 
 
 
