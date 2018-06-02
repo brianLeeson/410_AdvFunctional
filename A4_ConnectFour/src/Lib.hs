@@ -97,15 +97,7 @@ isGameOver :: Board -> Bool
 isGameOver board = undefined
 
 checkRows :: Int -> Board -> Bool
-checkCols rowIndex board =
-    -- find initial piece
-    let maybePiece = boardPeek rowIndex 0 board in
-        case maybePiece of
-            --This happens when we run out of rows
-            Nothing -> False 
-            -- start looking at initalPosition+1
-            Just initialPiece -> do let colWin = checkCol 0 0 initialPiece 1 board in
-                                        if colWin then True else checkCols (colIndex+1) board
+checkRows rowIndex board = undefined
 
 
 checkRow = undefined
