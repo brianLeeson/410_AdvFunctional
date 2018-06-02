@@ -101,9 +101,18 @@ checkRows = undefined
 
 checkRow = undefined
 
-checkCols = undefined
--- find initial piece
--- start looking at initalPosition+1
+checkCols :: Int -> Board -> Bool
+checkCols colIndex board =
+    -- find initial piece
+    let maybePiece = boardPeek 0 colIndex board in
+        case maybePiece of
+            --This happens when we run out of columns
+            Nothing -> False 
+            -- start looking at initalPosition+1
+            Just initialPiece -> do let colWin = checkCol 0 0 initialPiece 1 board in
+                                        if colWin then True else checkCols (colIndex+1) board
+
+
 
 checkCol :: Int -> Int -> Piece -> Int -> Board -> Bool
 checkCol rowIndex colIndex prevPiece seqCount board = 
