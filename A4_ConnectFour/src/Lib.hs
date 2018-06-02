@@ -131,7 +131,7 @@ checkRow rowIndex colIndex prevPiece seqCount board =
                                     -- found a run of at least two
                                     then checkRow rowIndex (colIndex+1) curPiece (seqCount+1) board
                                     -- run stopped. reset seqCount
-                                    else checkRow rowIndex (colIndex+1) curPiece 0 board
+                                    else checkRow rowIndex (colIndex+1) curPiece 1 board
 
 -- meant to start looking at (0,0)
 checkCols :: Int -> Board -> Bool
@@ -159,7 +159,7 @@ checkCol rowIndex colIndex prevPiece seqCount board =
                                     -- found a run of at least two
                                     then checkCol (rowIndex+1) colIndex curPiece (seqCount+1) board
                                     -- run stopped. reset seqCount
-                                    else checkCol (rowIndex+1) colIndex curPiece 0 board
+                                    else checkCol (rowIndex+1) colIndex curPiece 1 board
 
 -- meant to start looking at (0,0)
 checkBckSlashs :: Int -> Int -> Board -> Bool
@@ -187,7 +187,7 @@ checkBckSlash rowIndex colIndex prevPiece seqCount board =
                                     -- found a run of at least two
                                     then checkBckSlash (rowIndex+1) (colIndex+1) curPiece (seqCount+1) board
                                     -- run stopped. reset seqCount
-                                    else checkBckSlash (rowIndex+1) (colIndex+1) curPiece 0 board
+                                    else checkBckSlash (rowIndex+1) (colIndex+1) curPiece 1 board
 
 -- meant to start looking at (0,0)
 checkFwdSlashs :: Int -> Int -> Board -> Bool
@@ -215,7 +215,7 @@ checkFwdSlash rowIndex colIndex prevPiece seqCount board =
                                     -- found a run of at least two
                                     then checkFwdSlash (rowIndex+1) (colIndex-1) curPiece (seqCount+1) board
                                     -- run stopped. reset seqCount
-                                    else checkFwdSlash (rowIndex+1) (colIndex-1) curPiece 0 board
+                                    else checkFwdSlash (rowIndex+1) (colIndex-1) curPiece 1 board
 
 
 -- Game Control, based on 410 lecture 3
