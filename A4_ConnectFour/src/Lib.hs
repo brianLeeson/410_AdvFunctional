@@ -1,3 +1,8 @@
+-- Author: Brian
+-- Todo: 
+--	change win state checking. Need to combine functions where possible. use movement vectors to generalize the function.
+--	get rid of all of these nested case/if statements. Unsure how to do this.
+
 module Lib where
 
 import qualified Data.Map as Map 
